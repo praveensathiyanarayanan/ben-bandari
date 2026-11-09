@@ -17,7 +17,7 @@
   <link rel="alternate icon" href="favicon.ico?v=1">
   <link rel="apple-touch-icon" href="favicon.png?v=1">
   
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body>
 
@@ -247,7 +247,7 @@
     </section>
 
     <!-- ==========================================================================
-         3. Featured Properties — The Portfolio (Interactive Horizontal Carousel)
+         3. Featured Properties — Curated Sovereign Estates (Portfolio Showcase)
          ========================================================================== -->
     <section class="card-section royal-properties-section" id="properties">
       <div class="section-corner-frame" aria-hidden="true">
@@ -256,33 +256,50 @@
         <span class="corner corner-bl"></span>
         <span class="corner corner-br"></span>
       </div>
+
+      <!-- Architectural Villa Blueprint Sketch Background -->
+      <div class="properties-blueprint-bg" aria-hidden="true"></div>
+
       <div class="container royal-properties-container">
         <!-- Interactive Header Row -->
-        <div class="section-header portfolio-header-row" style="margin-bottom: 20px; padding-bottom: 14px;">
-          <div>
-            <span class="eyebrow royal-eyebrow">◆ SOVEREIGN PORTFOLIO</span>
-            <h2 class="section-title royal-serif-title" style="margin-bottom: 6px;">Curated Sovereign Estates.</h2>
+        <div class="portfolio-header-block">
+          <div class="portfolio-header-left">
+            <span class="portfolio-eyebrow"><span class="eyebrow-diamond">◆</span> SOVEREIGN PORTFOLIO</span>
+            <h2 class="portfolio-main-title">Curated Sovereign <span class="accent-estates">Estates.</span></h2>
+            <div class="portfolio-subtitle-wrap">
+              <span class="subtitle-bar"></span>
+              <p class="portfolio-subtitle-text">A private collection of exceptional assets across the world’s most desirable markets.</p>
+            </div>
             <div class="portfolio-stats-bar">
-              <span class="portfolio-stat-pill"><span class="portfolio-stat-dot"></span> $250M+ AUD Portfolio</span>
-              <span class="portfolio-stat-pill">10 Active Mandates</span>
-              <span class="portfolio-stat-pill">100% Off-Market Discretion</span>
+              <span class="portfolio-stat-pill">
+                <svg class="pill-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                GLOBAL ASSET PORTFOLIO
+              </span>
+              <span class="portfolio-stat-pill">
+                <svg class="pill-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                ACTIVE MANDATES
+              </span>
+              <span class="portfolio-stat-pill">
+                <svg class="pill-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                OFF-MARKET OPPORTUNITIES
+              </span>
             </div>
           </div>
           
-          <div class="portfolio-controls-group">
+          <div class="portfolio-header-right">
             <ul class="portfolio-filters">
-              <li><button class="filter-btn active" data-filter="all">All <span class="filter-count">(10)</span></button></li>
-              <li><button class="filter-btn" data-filter="residential">Residential <span class="filter-count">(4)</span></button></li>
-              <li><button class="filter-btn" data-filter="penthouse">Penthouses <span class="filter-count">(3)</span></button></li>
-              <li><button class="filter-btn" data-filter="estate">Estates <span class="filter-count">(3)</span></button></li>
+              <li><button class="filter-btn active" data-filter="all">All <span class="filter-count">(100)</span></button></li>
+              <li><button class="filter-btn" data-filter="residential">Residential <span class="filter-count">(40)</span></button></li>
+              <li><button class="filter-btn" data-filter="penthouse">Penthouses <span class="filter-count">(16)</span></button></li>
+              <li><button class="filter-btn" data-filter="estate">Estates <span class="filter-count">(12)</span></button></li>
             </ul>
 
             <div class="carousel-arrow-group">
               <button class="carousel-arrow-btn" id="propPrevBtn" aria-label="Previous properties">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button class="carousel-arrow-btn" id="propNextBtn" aria-label="Next properties">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <button class="carousel-arrow-btn arrow-next-orange" id="propNextBtn" aria-label="Next properties">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
               </button>
             </div>
           </div>
@@ -297,25 +314,28 @@
               <div class="card-image-wrap">
                 <img 
                   src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85" 
-                  alt="The Residence, Bellevue Hill"
+                  alt="The Residence, Beverly Hills"
                   loading="lazy"
                 >
-                <span class="property-status-badge">SOVEREIGN MANDATE</span>
+                <span class="property-status-badge">CONTEMPORARY MANSION</span>
               </div>
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE RESIDENCE</h3>
-                  <p class="property-subtitle">Bellevue Hill, Sydney · Durbach Block Jaggers</p>
-                  <p class="property-meta">4 Bed · 4.5 Bath · 520 sqm · 4-Car Gallery</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Harbour Outlook</span>
-                    <span class="property-tag">Infinity Pool</span>
-                    <span class="property-tag">Wine Vault</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Beverly Hills, Sydney</span>
+                  </div>
+                  <p class="property-desc">Architectural brilliance in a private, elevated setting.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 4 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 4.5 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 5,200 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$18,500,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="residence">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="residence">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="residence">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -328,22 +348,25 @@
                   alt="The Glass Pavilion, Toorak"
                   loading="lazy"
                 >
-                <span class="property-status-badge">PRIVATE TREATY</span>
+                <span class="property-status-badge">PRIVATE ESTATE</span>
               </div>
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE GLASS PAVILION</h3>
-                  <p class="property-subtitle">Toorak Botanical Enclave, Melbourne</p>
-                  <p class="property-meta">5 Bed · 6 Bath · 780 sqm · 6-Car Showroom</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Travertine Marble</span>
-                    <span class="property-tag">Cold Plunge</span>
-                    <span class="property-tag">Sculpture Garden</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Toorak, Melbourne</span>
+                  </div>
+                  <p class="property-desc">A modern estate of light, space and refinement.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 5 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 6 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 7,800 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$24,000,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="glass-pavilion">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="glass-pavilion">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="glass-pavilion">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -356,22 +379,25 @@
                   alt="The Clontarf Monolith, Middle Harbour"
                   loading="lazy"
                 >
-                <span class="property-status-badge">CONFIDENTIAL MANDATE</span>
+                <span class="property-status-badge">CONTEMPORARY RESIDENCE</span>
               </div>
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE CLONTARF MONOLITH</h3>
-                  <p class="property-subtitle">Middle Harbour, Sydney</p>
-                  <p class="property-meta">5 Bed · 6 Bath · 840 sqm · Deepwater Jetty</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Private Beach</span>
-                    <span class="property-tag">Boathouse</span>
-                    <span class="property-tag">Lift Access</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Clontarf, Sydney</span>
+                  </div>
+                  <p class="property-desc">A coastal residence defined by scale and privacy.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 5 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 6 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 8,400 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$28,500,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="clontarf-monolith">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="clontarf-monolith">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="clontarf-monolith">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -381,7 +407,7 @@
               <div class="card-image-wrap">
                 <img 
                   src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85" 
-                  alt="Vaucluse Modernist Sanctuary"
+                  alt="Vaucluse Sanctuary"
                   loading="lazy"
                 >
                 <span class="property-status-badge">OFF-MARKET EXCLUSIVE</span>
@@ -389,17 +415,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">VAUCLUSE SANCTUARY</h3>
-                  <p class="property-subtitle">Queens Avenue, Vaucluse, Sydney</p>
-                  <p class="property-meta">4 Bed · 5 Bath · 610 sqm · Horizon Pool</p>
-                  <div class="property-tags">
-                    <span class="property-tag">City Skyline View</span>
-                    <span class="property-tag">Wellness Suite</span>
-                    <span class="property-tag">Cinema</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Vaucluse, Sydney</span>
+                  </div>
+                  <p class="property-desc">A rare, off-market sanctuary in a blue-chip enclave.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 4 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 6 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 6,100 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$22,500,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="vaucluse-sanctuary">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="vaucluse-sanctuary">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="vaucluse-sanctuary">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -417,17 +446,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE CROWN SKY VILLA</h3>
-                  <p class="property-subtitle">One Circular Quay, Sydney</p>
-                  <p class="property-meta">5 Bed · 6 Bath · 680 sqm · 360° Harbour</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Opera House View</span>
-                    <span class="property-tag">Sky Deck</span>
-                    <span class="property-tag">24/7 Concierge</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>One Circular Quay, Sydney</span>
+                  </div>
+                  <p class="property-desc">Rare multi-level penthouse offering panoramic 360° harbour vistas.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 5 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 6 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 680 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$42,000,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="crown-sky-villa">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="crown-sky-villa">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="crown-sky-villa">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -445,17 +477,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE BOTANICAL PENTHOUSE</h3>
-                  <p class="property-subtitle">East Melbourne Parkland Enclave</p>
-                  <p class="property-meta">4 Bed · 4.5 Bath · 450 sqm · Rooftop Pool</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Gardens Vista</span>
-                    <span class="property-tag">Private Terrace</span>
-                    <span class="property-tag">Direct Lift</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>East Melbourne Parkland Enclave</span>
+                  </div>
+                  <p class="property-desc">Parkland sanctuary featuring rooftop garden and private pool deck.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 4 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 4.5 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 450 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$19,500,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="botanical-penthouse">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="botanical-penthouse">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="botanical-penthouse">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -473,17 +508,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">HORIZON TOWER CROWN</h3>
-                  <p class="property-subtitle">Southbank, Melbourne</p>
-                  <p class="property-meta">3 Bed · 3.5 Bath · 390 sqm · 4-Car Vault</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Yarra River Panorama</span>
-                    <span class="property-tag">Executive Office</span>
-                    <span class="property-tag">Automated Glass</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Southbank, Melbourne</span>
+                  </div>
+                  <p class="property-desc">Full-floor riverfront trophy with custom wine gallery and secure vault.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 3 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 3.5 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 390 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$16,800,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="horizon-crown">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="horizon-crown">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="horizon-crown">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -501,17 +539,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">THE PROMONTORY ESTATE</h3>
-                  <p class="property-subtitle">Oceanfront Headland, Whale Beach</p>
-                  <p class="property-meta">6 Bed · 7 Bath · 1,250 sqm Building · 2,400 sqm Land</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Oceanfront Reserve</span>
-                    <span class="property-tag">Helipad Ready</span>
-                    <span class="property-tag">Tennis Court</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Whale Beach, Sydney</span>
+                  </div>
+                  <p class="property-desc">Oceanfront headland estate with championship tennis court and helipad.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 6 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 7 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 2,400 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">Guide $32,000,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="promontory-estate">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="promontory-estate">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="promontory-estate">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -529,17 +570,20 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">ST GEORGES MONOLITH</h3>
-                  <p class="property-subtitle">St Georges Road, Toorak, Melbourne</p>
-                  <p class="property-meta">7 Bed · 8 Bath · 1,600 sqm · 3,100 sqm Grounds</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Grand Ballroom</span>
-                    <span class="property-tag">Chauffeur Courtyard</span>
-                    <span class="property-tag">Subterranean Spa</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Toorak, Melbourne</span>
+                  </div>
+                  <p class="property-desc">Monumental limestone estate with private ballroom and chauffeur courtyard.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 7 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 8 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 3,100 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">Guide $48,000,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="st-georges-estate">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="st-georges-estate">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="st-georges-estate">REQUEST INFO</button>
                 </div>
               </div>
             </article>
@@ -557,22 +601,33 @@
               <div class="card-body">
                 <div>
                   <h3 class="property-title">WATEGOS COASTAL RESERVE</h3>
-                  <p class="property-subtitle">Marine Parade, Byron Bay Oceanfront</p>
-                  <p class="property-meta">5 Bed · 6 Bath · 720 sqm · 1,800 sqm Land</p>
-                  <div class="property-tags">
-                    <span class="property-tag">Direct Beach Access</span>
-                    <span class="property-tag">Infinity Horizon</span>
-                    <span class="property-tag">Sub-Tropical</span>
+                  <div class="property-location-row">
+                    <svg class="loc-pin-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Byron Bay Oceanfront</span>
+                  </div>
+                  <p class="property-desc">Unrivaled direct beach access with infinity pool facing Julian Rocks.</p>
+                  <div class="property-specs-grid">
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg> 5 Bed</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-1C4.7 2.5 4 3.2 4 4v4h16V4c0-.8-.7-1.5-1.5-1.5a1.5 1.5 0 0 0-1 1L15 6M2 12h20M4 12v5a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-5M7 20v2M17 20v2"/></svg> 6 Bath</span>
+                    <span class="spec-pill"><svg class="spec-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 8 21"/><line x1="21" y1="21" x2="3" y2="3"/><polyline points="3 16 3 3 16 3"/></svg> 1,800 sqm</span>
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid rgba(14, 14, 14, 0.12); padding-top: 10px;">
-                  <div class="property-price" style="margin-bottom: 0;">$26,000,000 AUD</div>
-                  <button class="btn-royal-outline" data-property-key="wategos-reserve">View Dossier</button>
+                <div class="card-actions-grid">
+                  <button class="btn-card-view" data-property-key="wategos-reserve">VIEW DETAILS &rarr;</button>
+                  <button class="btn-card-inquire" data-property-key="wategos-reserve">REQUEST INFO</button>
                 </div>
               </div>
             </article>
 
           </div>
+        </div>
+
+        <!-- Bottom Horizontal Progress Bar & Counter -->
+        <div class="portfolio-footer-row">
+          <div class="portfolio-progress-bar">
+            <div class="portfolio-progress-fill" id="portfolioProgressFill"></div>
+          </div>
+          <div class="portfolio-counter" id="portfolioCounter">01 / 04</div>
         </div>
 
       </div>
@@ -1225,6 +1280,6 @@
 
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
-  <script src="app.js?v=25"></script>
+  <script src="app.js?v=29"></script>
 </body>
 </html>

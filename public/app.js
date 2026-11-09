@@ -943,20 +943,45 @@ function initPortfolioCarousel() {
   const track = document.getElementById('portfolioTrack');
   const prevBtn = document.getElementById('propPrevBtn');
   const nextBtn = document.getElementById('propNextBtn');
+  const progressFill = document.getElementById('portfolioProgressFill');
+  const counterEl = document.getElementById('portfolioCounter');
 
   if (!track) return;
 
-  const cardWidth = 384; // 360px card + 24px gap
+  function updateProgress() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const progress = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+    
+    // Progress fill percentage (from min 25% to 100%)
+    if (progressFill) {
+      const fillPercent = 25 + progress * 75;
+      progressFill.style.width = `${fillPercent}%`;
+    }
+
+    // Step index from 1 to 4
+    if (counterEl) {
+      const step = Math.min(4, Math.max(1, Math.round(progress * 3) + 1));
+      counterEl.textContent = `0${step} / 04`;
+    }
+  }
+
+  track.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  const getScrollStep = () => {
+    const firstCard = track.querySelector('.portfolio-card');
+    return firstCard ? firstCard.offsetWidth + 20 : 330;
+  };
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
     });
   }
 

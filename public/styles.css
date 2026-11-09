@@ -754,7 +754,6 @@ main.deck-container {
      2. #services (Sovereign Mandates & Services)
      3. #contact (Initiate a Sovereign Consultation)
    ========================================================================== */
-#properties,
 #services,
 #contact {
   background: 
@@ -765,102 +764,214 @@ main.deck-container {
   color: #0E0E0E !important;
 }
 
-/* 1. #properties (Curated Sovereign Estates) */
-#properties .royal-eyebrow,
-#properties .eyebrow {
-  color: #1F1706 !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
+/* ==========================================================================
+   1. #properties (Curated Sovereign Estates — Portfolio Showcase)
+   ========================================================================== */
+#properties {
+  position: relative;
+  background-color: #E2C78B;
+  background: 
+    radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.28) 0%, transparent 65%),
+    linear-gradient(135deg, #E2C78B 0%, #D8B774 48%, #CFAB64 100%) !important;
+  padding: 60px 0 25px;
+  overflow: hidden;
 }
 
-#properties .section-title,
-#properties .royal-serif-title {
-  color: #0E0E0E !important;
-  font-weight: 700 !important;
+.properties-blueprint-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 250px;
+  background-image: url('villa-sketch.svg');
+  background-repeat: no-repeat;
+  background-position: top 10px right 20px;
+  background-size: contain;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
 }
 
-#properties .portfolio-header-row {
+.royal-properties-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Portfolio Header Block */
+.portfolio-header-block {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid rgba(14, 14, 14, 0.22) !important;
-  padding-bottom: 14px;
-  gap: 20px;
+  margin-bottom: 22px;
+  gap: 24px;
+}
+
+.portfolio-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #1A1A1A;
+  margin-bottom: 6px;
+}
+
+.portfolio-eyebrow .eyebrow-diamond {
+  color: #C3512F;
+  font-size: 8px;
+}
+
+.portfolio-main-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(34px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.accent-estates {
+  font-style: italic;
+  color: #C3512F;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.portfolio-subtitle-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.subtitle-bar {
+  width: 2.5px;
+  height: 18px;
+  background-color: #C3512F;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.portfolio-subtitle-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15.5px;
+  font-style: italic;
+  color: #222222;
+  line-height: 1.4;
+  margin: 0;
 }
 
 .portfolio-stats-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 6px;
   flex-wrap: wrap;
 }
 
 .portfolio-stat-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  gap: 7px;
+  background: #FBF6ED;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  padding: 6px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #0E0E0E;
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(14, 14, 14, 0.18);
-  padding: 4px 10px;
-  backdrop-filter: blur(4px);
+  color: #1A1A1A;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.portfolio-stat-dot {
-  width: 6px;
-  height: 6px;
-  background: #0E0E0E;
-  border-radius: 50%;
-  display: inline-block;
-  animation: pulseGoldDot 2s infinite ease-in-out;
+.portfolio-stat-pill .pill-icon {
+  color: #C3512F;
+  flex-shrink: 0;
 }
 
-@keyframes pulseGoldDot {
-  0%, 100% { opacity: 0.5; transform: scale(0.85); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-.portfolio-controls-group {
+.portfolio-header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
 #properties .portfolio-filters {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 #properties .filter-btn {
-  color: rgba(14, 14, 14, 0.72) !important;
-  font-weight: 600 !important;
-  padding: 6px 10px;
+  color: #2C2C2C !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500 !important;
+  padding: 6px 4px;
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12.5px;
   transition: all 0.2s ease;
   border-bottom: 2px solid transparent;
 }
 
 #properties .filter-btn .filter-count {
   font-size: 11px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-#properties .filter-btn:hover,
+#properties .filter-btn:hover {
+  color: #111111 !important;
+}
+
 #properties .filter-btn.active {
-  color: #0E0E0E !important;
+  color: #C3512F !important;
   font-weight: 700 !important;
-  border-bottom: 2px solid #0E0E0E !important;
+  border-bottom: 2.5px solid #C3512F !important;
+}
+
+#properties .carousel-arrow-group {
+  display: flex;
+  gap: 8px;
+}
+
+#properties .carousel-arrow-btn {
+  width: 36px;
+  height: 36px;
+  background: #FBF6ED;
+  border: 1px solid #D1B88F;
+  color: #1A1A1A;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#properties .carousel-arrow-btn.arrow-next-orange,
+#properties #propNextBtn {
+  border-color: #C3512F;
+  color: #C3512F;
+}
+
+#properties .carousel-arrow-btn:hover {
+  background: #FFFFFF;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 /* Portfolio Horizontal Carousel Track */
@@ -872,88 +983,51 @@ main.deck-container {
 
 .portfolio-carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 8px 2px 18px 2px;
-  scrollbar-width: thin;
-  scrollbar-color: #0E0E0E rgba(14, 14, 14, 0.08);
+  padding: 8px 2px 14px 2px;
+  scrollbar-width: none;
   cursor: grab;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio-carousel-track:active {
   cursor: grabbing;
 }
 
-.portfolio-carousel-track::-webkit-scrollbar {
-  height: 5px;
-}
-
-.portfolio-carousel-track::-webkit-scrollbar-track {
-  background: rgba(14, 14, 14, 0.08);
-  border-radius: 3px;
-}
-
-.portfolio-carousel-track::-webkit-scrollbar-thumb {
-  background: #0E0E0E;
-  border-radius: 3px;
-}
-
-/* Portfolio Card Design with Locked Uniform Box Sizes & Picture Proportions */
+/* 4 Visible Cards in Horizontal Row */
 .portfolio-card {
-  flex: 0 0 360px;
-  width: 360px;
-  min-width: 360px;
-  max-width: 360px;
-  height: 450px;
-  min-height: 450px;
-  max-height: 450px;
+  flex: 0 0 calc((100% - 60px) / 4);
+  min-width: 285px;
+  max-width: 335px;
   scroll-snap-align: start;
   background: #FFFFFF !important;
-  border: 1px solid rgba(14, 14, 14, 0.16) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
-  border-color: #0E0E0E !important;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
 }
 
-/* Radiant Shimmer Light Sweep across Card */
-.portfolio-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -160%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
-  transform: skewX(-22deg);
-  pointer-events: none;
-  z-index: 5;
-}
-
-.portfolio-card:hover::after {
-  left: 160%;
-  transition: left 0.85s ease-in-out;
-}
-
-/* Uniform Picture Container (Exact 210px Height on All Cards) */
 .portfolio-card .card-image-wrap {
   position: relative;
   width: 100%;
-  height: 210px;
-  min-height: 210px;
-  max-height: 210px;
+  height: 185px;
   overflow: hidden;
   background-color: #121212;
 }
@@ -964,98 +1038,202 @@ main.deck-container {
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio-card:hover .card-image-wrap img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
-/* Uniform Card Body Container (Exact 240px Height on All Cards) */
+.portfolio-card .property-status-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(18, 24, 30, 0.92);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
 .portfolio-card .card-body {
-  height: 240px;
-  min-height: 240px;
-  max-height: 240px;
-  padding: 16px 20px;
+  padding: 16px 18px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
+  background-color: #FFFFFF;
+  flex: 1;
 }
 
 .portfolio-card .property-title {
-  color: #0E0E0E !important;
-  font-weight: 700 !important;
   font-family: 'Cinzel', serif !important;
   font-size: 15px;
+  font-weight: 700 !important;
   letter-spacing: 0.04em;
-  margin-bottom: 2px;
-  height: 20px;
-  line-height: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.portfolio-card .property-subtitle {
-  color: #2D2D2D !important;
-  font-size: 12px;
+  color: #111111 !important;
   margin-bottom: 3px;
-  height: 16px;
-  line-height: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.portfolio-card .property-meta {
-  color: #555555 !important;
-  font-size: 12px;
-  margin-bottom: 6px;
-  height: 16px;
-  line-height: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.portfolio-card .property-tags {
+.portfolio-card .property-location-row {
   display: flex;
+  align-items: center;
   gap: 5px;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  height: 24px;
-  min-height: 24px;
-  max-height: 24px;
-  margin: 4px 0 10px;
+  color: #444444;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.portfolio-card .property-tag {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #2C2C2C;
-  background: #F4F4F2;
-  padding: 2px 7px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.portfolio-card .loc-pin-icon {
+  color: #C3512F;
+  flex-shrink: 0;
+}
+
+.portfolio-card .property-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #666666;
+  margin-bottom: 14px;
+  min-height: 34px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.portfolio-card .property-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.portfolio-card .spec-pill {
+  background: #FAF8F4;
+  border: 1px solid #ECE3D4;
   border-radius: 2px;
+  padding: 5px 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   white-space: nowrap;
+}
+
+.portfolio-card .spec-icon {
+  color: #C3512F;
+  display: inline-flex;
+}
+
+.portfolio-card .card-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.portfolio-card .btn-card-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #C3512F;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 4px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(195, 81, 47, 0.25);
   transition: all 0.2s ease;
 }
 
-.portfolio-card:hover .property-tag {
-  background: #0E0E0E;
-  color: #DFC282;
-  border-color: #0E0E0E;
+.portfolio-card .btn-card-view:hover {
+  background: #B34423;
+  transform: translateY(-1px);
 }
 
-.portfolio-card .property-price {
-  color: #0E0E0E !important;
-  font-weight: 700 !important;
-  font-family: 'Cormorant Garamond', Georgia, serif !important;
-  font-size: 18px;
-  line-height: 1;
+.portfolio-card .btn-card-inquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAF8F4;
+  color: #222222 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 4px;
+  border: 1px solid #DFD2BF;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portfolio-card .btn-card-inquire:hover {
+  background: #F0E8DC;
+  border-color: #C3512F;
+  color: #C3512F !important;
+}
+
+/* Bottom Progress Bar & Counter */
+.portfolio-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+  padding: 0 4px;
+}
+
+.portfolio-progress-bar {
+  flex: 1;
+  height: 3px;
+  background-color: rgba(14, 14, 14, 0.15);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.portfolio-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%;
+  background-color: #C3512F;
+  border-radius: 2px;
+  transition: width 0.25s ease-out;
+}
+
+.portfolio-counter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1A1A1A;
+  flex-shrink: 0;
 }
 
 .portfolio-card .btn-royal-outline {

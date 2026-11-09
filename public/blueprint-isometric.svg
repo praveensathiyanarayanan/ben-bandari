@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" fill="none" stroke="#2B2118" stroke-linecap="square" stroke-linejoin="miter">
+  <defs>
+    <!-- Isometric 30-degree grid -->
+    <pattern id="isoGrid" width="60" height="103.92" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 60 51.96 L 30 103.92 L 0 51.96 Z" stroke="currentColor" stroke-width="0.35" opacity="0.12" fill="none" />
+      <line x1="0" y1="51.96" x2="60" y2="51.96" stroke="currentColor" stroke-width="0.35" opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#isoGrid)" />
+
+  <!-- Sheet Border -->
+  <g stroke="currentColor" opacity="0.3" stroke-width="0.8">
+    <rect x="25" y="25" width="1870" height="1030" stroke-width="1.2" />
+    <rect x="30" y="30" width="1860" height="1020" stroke-width="0.6" />
+  </g>
+
+  <!-- Axonometric 3D Wireframe Sovereign Pavilion (Precision CAD Construction) -->
+  <g stroke="currentColor" opacity="0.65" transform="translate(100, 40)">
+    
+    <!-- Horizon / Datum Lines -->
+    <line x1="100" y1="780" x2="1600" y2="780" stroke-dasharray="10,6" stroke-width="0.8" opacity="0.4" />
+    <line x1="850" y1="50" x2="850" y2="920" stroke-dasharray="6,8" stroke-width="0.8" opacity="0.4" />
+
+    <!-- Isometric Coordinate Axis Indicator (Bottom Right) -->
+    <g transform="translate(1450, 850)" stroke-width="1.4">
+      <line x1="0" y1="0" x2="60" y2="-34.64" />
+      <line x1="0" y1="0" x2="-60" y2="-34.64" />
+      <line x1="0" y1="0" x2="0" y2="-70" />
+      <polygon points="60,-34.64 50,-33 55,-26" fill="currentColor" stroke="none" />
+      <polygon points="-60,-34.64 -50,-33 -55,-26" fill="currentColor" stroke="none" />
+      <polygon points="0,-70 -4,-58 4,-58" fill="currentColor" stroke="none" />
+      <text x="68" y="-36" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="currentColor" stroke="none">+X (30°)</text>
+      <text x="-115" y="-36" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="currentColor" stroke="none">+Y (150°)</text>
+      <text x="0" y="-76" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">+Z (VERTICAL)</text>
+    </g>
+
+    <!-- 1. PODIUM BASE & FOUNDATION SLAB (Axonometric Prism) -->
+    <g stroke-width="2.2">
+      <!-- Upper Face of Podium -->
+      <polygon points="850,750 1450,403.6 1150,230.4 550,576.8" />
+      <!-- Lower Face Edge -->
+      <line x1="850" y1="750" x2="850" y2="790" stroke-width="2.6" />
+      <line x1="550" y1="576.8" x2="550" y2="616.8" stroke-width="2.6" />
+      <line x1="1450" y1="403.6" x2="1450" y2="443.6" stroke-width="2.6" />
+      <polygon points="850,790 1450,443.6 1150,270.4 550,616.8" stroke-width="1.2" opacity="0.5" />
+    </g>
+
+    <!-- 2. GROUND FLOOR GLASS PAVILION (Structural Steel Frame) -->
+    <g stroke-width="1.8">
+      <!-- Corner Columns -->
+      <line x1="850" y1="750" x2="850" y2="550" stroke-width="3" />
+      <line x1="1150" y1="576.8" x2="1150" y2="376.8" stroke-width="2.5" />
+      <line x1="1350" y1="461.3" x2="1350" y2="261.3" stroke-width="2.5" />
+      <line x1="1050" y1="634.5" x2="1050" y2="434.5" stroke-width="2.5" />
+      <line x1="650" y1="634.5" x2="650" y2="434.5" stroke-width="2.5" />
+
+      <!-- Intermediate Roof Beams -->
+      <line x1="850" y1="550" x2="1350" y2="261.3" stroke-width="2" />
+      <line x1="650" y1="434.5" x2="1150" y2="145.8" stroke-width="2" />
+      <line x1="650" y1="434.5" x2="850" y2="550" stroke-width="2" />
+      <line x1="1150" y1="145.8" x2="1350" y2="261.3" stroke-width="2" />
+    </g>
+
+    <!-- 3. CANTILEVER UPPER LEVEL RESIDENCE WING (Floating Volume) -->
+    <g stroke-width="2.4">
+      <!-- Upper Box Top Face -->
+      <polygon points="780,420 1280,131.3 1040,0 540,288.7" />
+      <!-- Upper Box Underside Face -->
+      <polygon points="780,480 1280,191.3 1040,60 540,348.7" stroke-width="1.6" />
+      <!-- Vertical Edge Struts -->
+      <line x1="780" y1="420" x2="780" y2="480" stroke-width="3" />
+      <line x1="1280" y1="131.3" x2="1280" y2="191.3" stroke-width="2.5" />
+      <line x1="1040" y1="0" x2="1040" y2="60" stroke-width="2.5" />
+      <line x1="540" y1="288.7" x2="540" y2="348.7" stroke-width="3" />
+    </g>
+
+    <!-- Glass Mullions on Upper Cantilever -->
+    <g stroke-width="0.9" opacity="0.6">
+      <line x1="600" y1="323.3" x2="600" y2="383.3" />
+      <line x1="660" y1="358" x2="660" y2="418" />
+      <line x1="720" y1="392.6" x2="720" y2="452.6" />
+      
+      <line x1="860" y1="373.8" x2="860" y2="433.8" />
+      <line x1="940" y1="327.6" x2="940" y2="387.6" />
+      <line x1="1020" y1="281.4" x2="1020" y2="341.4" />
+      <line x1="1100" y1="235.2" x2="1100" y2="295.2" />
+      <line x1="1180" y1="189" x2="1180" y2="249" />
+    </g>
+
+    <!-- Sunshade Brise-Soleil Horizontal Blades -->
+    <g stroke-width="1.2" opacity="0.75">
+      <line x1="530" y1="294.5" x2="770" y2="425.8" />
+      <line x1="530" y1="309.5" x2="770" y2="440.8" />
+      <line x1="530" y1="324.5" x2="770" y2="455.8" />
+      <line x1="530" y1="339.5" x2="770" y2="470.8" />
+    </g>
+
+    <!-- Floating Staircase Details (Cantilever Treads) -->
+    <g stroke-width="1.2" opacity="0.7">
+      <line x1="720" y1="670" x2="790" y2="630" />
+      <line x1="720" y1="655" x2="790" y2="615" />
+      <line x1="720" y1="640" x2="790" y2="600" />
+      <line x1="720" y1="625" x2="790" y2="585" />
+      <line x1="720" y1="610" x2="790" y2="570" />
+      <line x1="720" y1="595" x2="790" y2="555" />
+    </g>
+
+    <!-- Technical Annotations & Callouts (Leader Lines with Arrowheads) -->
+    <g font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none">
+      <!-- Callout 1 -->
+      <line x1="530" y1="280" x2="430" y2="230" stroke="currentColor" stroke-width="0.8" />
+      <line x1="430" y1="230" x2="280" y2="230" stroke="currentColor" stroke-width="0.8" />
+      <circle cx="530" cy="280" r="2.5" fill="currentColor" />
+      <text x="270" y="226" text-anchor="end" font-weight="bold">6.2m POST-TENSIONED CANTILEVER</text>
+      <text x="270" y="238" text-anchor="end" opacity="0.75">REINFORCED CARBON SLAB STRUCTURAL WING</text>
+
+      <!-- Callout 2 -->
+      <line x1="1200" y1="160" x2="1320" y2="100" stroke="currentColor" stroke-width="0.8" />
+      <line x1="1320" y1="100" x2="1520" y2="100" stroke="currentColor" stroke-width="0.8" />
+      <circle cx="1200" cy="160" r="2.5" fill="currentColor" />
+      <text x="1530" y="96" font-weight="bold">SOLAR PHOTOVOLTAIC ROOF CORE</text>
+      <text x="1530" y="108" opacity="0.75">INTEGRATED RAINWATER RETENTION SYSTEM</text>
+
+      <!-- Callout 3 -->
+      <line x1="850" y1="750" x2="960" y2="820" stroke="currentColor" stroke-width="0.8" />
+      <line x1="960" y1="820" x2="1180" y2="820" stroke="currentColor" stroke-width="0.8" />
+      <circle cx="850" cy="750" r="2.5" fill="currentColor" />
+      <text x="1190" y="816" font-weight="bold">COR-TEN MONOLITH FRAME</text>
+      <text x="1190" y="828" opacity="0.75">CUSTOM BRUSHED ANODIZED BRONZE MULLIONS</text>
+    </g>
+
+    <!-- Engineering Drawing Meta Block (Bottom Left) -->
+    <g stroke="currentColor" opacity="0.7" transform="translate(100, 840)">
+      <rect x="0" y="0" width="380" height="70" stroke-width="1.2" fill="none" />
+      <line x1="0" y1="24" x2="380" y2="24" stroke-width="0.8" />
+      <line x1="200" y1="24" x2="200" y2="70" stroke-width="0.8" />
+      <g font-family="'Courier New', monospace" fill="currentColor" stroke="none">
+        <text x="12" y="16" font-size="9" font-weight="bold">AXONOMETRIC ISOMETRIC SCHEMATIC</text>
+        <text x="368" y="16" font-size="8" text-anchor="end">DWG REF: ISO-302</text>
+        <text x="12" y="40" font-size="7.5" opacity="0.6">PERSPECTIVE ANGLE</text>
+        <text x="12" y="52" font-size="8.5" font-weight="bold">30° / 30° REVERSE AXIS</text>
+        <text x="212" y="40" font-size="7.5" opacity="0.6">PORTFOLIO MANDATE</text>
+        <text x="212" y="52" font-size="8.5" font-weight="bold">BEN BANDARI SOVEREIGN</text>
+      </g>
+    </g>
+  </g>
+</svg>

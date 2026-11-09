@@ -779,33 +779,53 @@ main.deck-container {
   overflow: hidden;
 }
 
-.properties-drafting-bg {
+/* ==========================================================================
+   Architectural Technical CAD Blueprint System (All Sections Except Hero)
+   ========================================================================== */
+.section-blueprint-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url('architectural-elevations.svg');
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  opacity: 0.65;
+  background-position: center;
   pointer-events: none;
   z-index: 1;
 }
 
-.properties-blueprint-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 65%;
-  height: 500px;
-  background-image: url('villa-sketch.svg');
-  background-repeat: no-repeat;
-  background-position: top 15px right 30px;
-  background-size: contain;
-  opacity: 0.95;
-  pointer-events: none;
-  z-index: 2;
+.section-blueprint-bg.blueprint-schematic {
+  background-image: url('blueprint-schematic.svg');
+}
+
+.section-blueprint-bg.blueprint-isometric {
+  background-image: url('blueprint-isometric.svg');
+}
+
+/* Section-Specific Technical Tones & Opacity */
+#about .section-blueprint-bg {
+  opacity: 0.22;
+}
+
+#properties .section-blueprint-bg {
+  opacity: 0.38;
+}
+
+#transactions .section-blueprint-bg {
+  opacity: 0.22;
+}
+
+#services .section-blueprint-bg {
+  opacity: 0.35;
+}
+
+#editorial .section-blueprint-bg {
+  opacity: 0.30;
+  filter: invert(85%) sepia(20%) saturate(700%) hue-rotate(5deg) brightness(105%) contrast(90%);
+}
+
+#contact .section-blueprint-bg {
+  opacity: 0.35;
 }
 
 .royal-properties-container {
@@ -1747,20 +1767,7 @@ main.deck-container {
   overflow: hidden;
 }
 
-.about-blueprint-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 55%;
-  height: 100%;
-  background-image: url('villa-sketch.svg');
-  background-repeat: no-repeat;
-  background-position: right 45% center;
-  background-size: contain;
-  opacity: 0.85;
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 .royal-about-container {
   position: relative;

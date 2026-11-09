@@ -803,45 +803,42 @@ function initDeckScroll() {
         }
       });
 
-      // Sequential stacking timeline with majestic upward glide and container fade-in:
-      // Transition 1 (Hero -> About): Immediate, swift glide over Hero with zero pre-dwell
-      const about = document.getElementById('about');
-      tl.to(about, {
-        yPercent: 0,
-        ease: "power2.out",
-        duration: 0.65
-      });
-      const aboutContent = about.querySelector('.container');
-      if (aboutContent) {
-        tl.to(aboutContent, {
-          opacity: 1,
-          y: 0,
-          ease: "power2.out",
-          duration: 0.5
-        }, "<0.12");
-      }
-
-      // Subsequent transitions (About -> Properties, Properties -> Transactions, etc.):
-      // 1. Dwell: crisp pause so section locks in and is immediately viewable
-      // 2. Glide: swift, silky glide directly on top of previous section
-      // 3. Fade-in: content smoothly fades in and rises into place as the section arrives
-      for (let i = 2; i < sections.length; i++) {
-        tl.to({}, { duration: 0.25 });
+      // Sequential stacking timeline with majestic upward glide and delayed fade-in:
+      // For all sections except Hero (sections 1 through 6):
+      // 1. Section pops up / glides over previous card (duration: 0.65s)
+      // 2. After section pops up, pause for 0.5s delay
+      // 3. Inner elements have a smooth fade-in effect (duration: 0.55s)
+      // 4. Section is held in view with comfortable dwell time
+      for (let i = 1; i < sections.length; i++) {
         const sec = sections[i];
         const content = sec.querySelector('.container');
+        const secId = sectionIds[i];
+
+        // 1. Section pops up / glides into place
         tl.to(sec, {
           yPercent: 0,
           ease: "power2.out",
           duration: 0.65
         });
+
+        // 2. 0.5s delay after section pops up before elements appear
+        tl.to({}, { duration: 0.5 });
+
+        // 3. Elements fade in and glide up into place
         if (content) {
           tl.to(content, {
             opacity: 1,
             y: 0,
             ease: "power2.out",
-            duration: 0.5
-          }, "<0.12");
+            duration: 0.55
+          });
         }
+
+        // Add exact section anchor label once elements have faded in
+        tl.addLabel(`section-${secId}`);
+
+        // 4. Dwell duration so section is fully enjoyed before next section arrives
+        tl.to({}, { duration: 0.4 });
       }
 
       // Smooth in-page anchor navigation: scroll to exact card time
@@ -858,15 +855,29 @@ function initDeckScroll() {
               });
               return;
             }
-            const index = sectionIds.indexOf(id);
-            if (index !== -1 && tl.scrollTrigger) {
+            if (tl.scrollTrigger) {
               e.preventDefault();
-              const progress = index / totalTransitions;
-              const target = tl.scrollTrigger.start + progress * (tl.scrollTrigger.end - tl.scrollTrigger.start);
-              window.scrollTo({
-                top: target,
-                behavior: 'smooth'
-              });
+              let scrollPos;
+              try {
+                scrollPos = tl.scrollTrigger.labelToScroll(`section-${id}`);
+              } catch (err) {}
+
+              if (scrollPos !== undefined) {
+                window.scrollTo({
+                  top: scrollPos,
+                  behavior: 'smooth'
+                });
+              } else {
+                const index = sectionIds.indexOf(id);
+                if (index !== -1) {
+                  const progress = index / totalTransitions;
+                  const target = tl.scrollTrigger.start + progress * (tl.scrollTrigger.end - tl.scrollTrigger.start);
+                  window.scrollTo({
+                    top: target,
+                    behavior: 'smooth'
+                  });
+                }
+              }
             }
           }
         });

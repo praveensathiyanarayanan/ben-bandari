@@ -867,8 +867,7 @@ main.deck-container {
 .editorial-header,
 .editorial-grid,
 .contact-left,
-.consultation-form-card,
-.section-corner-frame {
+.consultation-form-card {
   position: relative !important;
   z-index: 5 !important;
 }
@@ -3171,16 +3170,17 @@ main.deck-container {
 
 
 /* ==========================================================================
-   Architectural Section Framing & Corner Borders
+   Architectural Section Framing & Corner Borders (Universal Dark For All Sections)
    ========================================================================== */
 .section-corner-frame {
-  position: absolute;
+  position: absolute !important;
   top: 96px;
   bottom: 26px;
   left: 26px;
   right: 26px;
   pointer-events: none;
-  z-index: 25;
+  z-index: 25 !important;
+  color: #0E0E0E !important;
 }
 
 /* Subtle architectural perimeter hairline */
@@ -3192,7 +3192,7 @@ main.deck-container {
   right: 0;
   bottom: 0;
   border: 1px solid currentColor;
-  opacity: 0.18;
+  opacity: 0.25;
   pointer-events: none;
 }
 
@@ -3201,7 +3201,7 @@ main.deck-container {
   position: absolute;
   width: 52px;
   height: 52px;
-  border-color: currentColor;
+  border-color: currentColor !important;
   pointer-events: none;
 }
 
@@ -3233,40 +3233,15 @@ main.deck-container {
   border-right: 2px solid currentColor;
 }
 
-/* Section-Specific Theme Tones */
-/* 1. Hero Section (Dark Photo) */
-#hero .section-corner-frame {
-  color: #DFC282;
-}
-
-/* 2. About Section (Pure White with Terracotta Accent) */
-#about .section-corner-frame {
-  color: #C3512F;
-}
-
-/* 3. Properties Section (Royal Gold) */
-#properties .section-corner-frame {
-  color: #0E0E0E;
-}
-
-/* 4. Transactions Section (Pure White) */
-#transactions .section-corner-frame {
-  color: #C5A059;
-}
-
-/* 5. Services Section (Royal Gold) */
-#services .section-corner-frame {
-  color: #0E0E0E;
-}
-
-/* 6. Editorial Section (Obsidian Black) */
-#editorial .section-corner-frame {
-  color: #DFC282;
-}
-
-/* 7. Contact Section (Royal Gold - Reference View) */
+/* Universal Dark Borders for ALL Sections Including Hero */
+#hero .section-corner-frame,
+#about .section-corner-frame,
+#properties .section-corner-frame,
+#transactions .section-corner-frame,
+#services .section-corner-frame,
+#editorial .section-corner-frame,
 #contact .section-corner-frame {
-  color: #0E0E0E;
+  color: #0E0E0E !important;
 }
 
 @media (max-width: 991px) {

@@ -821,30 +821,31 @@ main.deck-container {
   background-image: url('blueprint-isometric.svg');
 }
 
-/* Section-Specific Technical Tones & Opacity */
+/* Section-Specific Technical Tones & Very Minimal Opacity */
 #about .section-blueprint-bg {
-  opacity: 0.22;
+  opacity: 0.08;
 }
 
-#properties .section-blueprint-bg {
-  opacity: 0.18;
+#properties .section-blueprint-bg,
+#properties .properties-blueprint-bg {
+  display: none !important;
 }
 
 #transactions .section-blueprint-bg {
-  opacity: 0.22;
+  opacity: 0.07;
 }
 
 #services .section-blueprint-bg {
-  opacity: 0.25;
+  opacity: 0.08;
 }
 
 #editorial .section-blueprint-bg {
-  opacity: 0.22;
+  opacity: 0.07;
   filter: invert(85%) sepia(20%) saturate(700%) hue-rotate(5deg) brightness(105%) contrast(90%);
 }
 
 #contact .section-blueprint-bg {
-  opacity: 0.25;
+  opacity: 0.08;
 }
 
 /* Guarantee All Content & Cards Are Strictly Above Blueprint Backgrounds */

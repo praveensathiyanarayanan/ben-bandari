@@ -826,9 +826,8 @@ main.deck-container {
   opacity: 0.08;
 }
 
-#properties .section-blueprint-bg,
-#properties .properties-blueprint-bg {
-  display: none !important;
+#properties .section-blueprint-bg {
+  opacity: 0.08;
 }
 
 #transactions .section-blueprint-bg {

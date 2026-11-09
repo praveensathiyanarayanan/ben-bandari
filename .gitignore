@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment and OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Scratch scripts
+*.ps1
+test-*.html
+test-*.png

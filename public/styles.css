@@ -1,0 +1,3103 @@
+/* ==========================================================================
+   Ben Bandari — Contemporary Real Estate Portfolio
+   Design Reference Implementation
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --pure-white: #FFFFFF;
+  --brand-orange: #C5A059; /* Aligned to Sovereign Royal Gold */
+  --soft-white: #F8F8F7;
+  --deep-charcoal: #1C1C1C;
+  --graphite: #424242;
+  --light-grey: #E8E8E8;
+  --mid-grey: #858585;
+
+  /* Sovereign & Royal Luxury Palette */
+  --royal-gold: #C5A059;
+  --royal-gold-light: #DFC282;
+  --royal-gold-dark: #9A7B38;
+  --royal-obsidian: #101010;
+  --royal-champagne: #F5EFEB;
+  --royal-border: rgba(197, 160, 89, 0.35);
+  --royal-glow: rgba(197, 160, 89, 0.2);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-royal: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  
+  /* Type Scale */
+  --font-hero: 40px;
+  --line-hero: 1.17;
+  --weight-hero: 400;
+
+  --font-section: 28px;
+  --line-section: 1.2;
+  --weight-section: 500;
+
+  --font-subheading: 24px;
+  --line-subheading: 1.2;
+  --weight-subheading: 400;
+
+  --font-prop-title: 20px;
+  --line-prop-title: 1.25;
+  --weight-prop-title: 500;
+
+  --font-body: 18px;
+  --line-body: 1.4;
+  --weight-body: 400;
+
+  --font-nav: 16px;
+  --line-nav: 1.3;
+  --weight-nav: 400;
+
+  --font-caption: 16px;
+  --line-caption: 1.4;
+  --weight-caption: 400;
+
+  /* Spacing */
+  --unit: 4px;
+  --max-width: 1440px;
+  --section-spacing: 100px;
+  --content-padding: 40px;
+  --gap-standard: 20px;
+  --gap-small: 12px;
+
+  /* Radius Rules */
+  --radius-image: 0px;
+  --radius-card: 0px;
+  --radius-button: 8px;
+
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-smooth: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--pure-white);
+  color: var(--deep-charcoal);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--pure-white);
+  color: var(--deep-charcoal);
+  line-height: var(--line-body);
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-image);
+}
+
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: inherit;
+  box-shadow: none;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+.section-soft {
+  background-color: var(--soft-white);
+}
+
+.section-pure {
+  background-color: var(--pure-white);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-orange);
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   Buttons & Links
+   ========================================================================== */
+
+/* Outlined Orange Button (Per Design Reference) */
+.btn-orange-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  background: transparent;
+  color: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
+  border-radius: var(--radius-button);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-orange-outline:hover,
+.btn-orange-outline:focus-visible {
+  background-color: var(--brand-orange);
+  background: var(--brand-orange);
+  color: var(--pure-white);
+  border-color: var(--brand-orange);
+}
+
+/* Ghost Links (Pure text link with refined bottom underline) */
+.ghost-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--deep-charcoal);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 0 0 6px 0 !important;
+  margin: 0;
+  border: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--deep-charcoal) !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--transition-fast), border-bottom-color var(--transition-fast), gap var(--transition-fast);
+}
+
+.ghost-link:hover,
+.ghost-link:focus-visible {
+  color: var(--brand-orange);
+  border-bottom-color: var(--brand-orange) !important;
+  gap: 12px;
+  outline: none !important;
+}
+
+.ghost-link-orange {
+  color: var(--royal-gold-dark) !important;
+  font-weight: 500;
+  border: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--royal-gold) !important;
+}
+
+.ghost-link-orange:hover,
+.ghost-link-orange:focus-visible {
+  color: var(--royal-gold) !important;
+  border-bottom-color: var(--royal-gold) !important;
+  opacity: 1;
+  gap: 12px;
+  outline: none !important;
+}
+
+.ghost-link-white {
+  color: var(--pure-white);
+  border: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.ghost-link-white:hover,
+.ghost-link-white:focus-visible {
+  color: var(--brand-orange);
+  border-bottom-color: var(--brand-orange) !important;
+  gap: 12px;
+  outline: none !important;
+}
+
+/* Filled Orange Button for Form Submit */
+.btn-orange-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-orange);
+  background: var(--brand-orange);
+  color: var(--pure-white);
+  border: 1px solid var(--brand-orange);
+  border-radius: var(--radius-button);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-orange-fill:hover,
+.btn-orange-fill:focus-visible {
+  background-color: #cb4605;
+  border-color: #cb4605;
+}
+
+/* Royal Gold & Sovereign Button Actions */
+.btn-royal-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #C5A059 0%, #DFBF7A 50%, #A48039 100%);
+  color: #121212 !important;
+  padding: 12px 28px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 6px 22px rgba(197, 160, 89, 0.32);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-royal-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.45);
+  filter: brightness(1.08);
+}
+
+.btn-royal-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--royal-gold) !important;
+  padding: 10px 22px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--royal-gold);
+  border-radius: 0;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-royal-outline:hover {
+  background: var(--royal-gold);
+  color: #121212 !important;
+  box-shadow: 0 4px 18px rgba(197, 160, 89, 0.35);
+}
+
+/* ==========================================================================
+   1. Brand Navigation
+   ========================================================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth);
+  color: var(--pure-white);
+  border-bottom: 1px solid #FFFFFF !important;
+}
+
+.site-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #FFFFFF !important;
+  color: var(--deep-charcoal);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-brand-crest {
+  color: var(--royal-gold);
+  font-size: 14px;
+}
+
+.nav-brand-text {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.nav-brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: inherit;
+}
+
+.nav-brand-tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--royal-gold);
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: var(--font-nav);
+  font-weight: var(--weight-nav);
+  line-height: var(--line-nav);
+  color: inherit;
+  position: relative;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--royal-gold);
+}
+
+.site-nav:not(.scrolled) .nav-link:hover,
+.site-nav:not(.scrolled) .nav-link.active {
+  color: var(--royal-gold-light);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Mobile Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--pure-white);
+  z-index: 1200;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--light-grey);
+  transition: right 300ms ease;
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.mobile-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--deep-charcoal);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+  list-style: none;
+}
+
+.mobile-menu-links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--deep-charcoal);
+  transition: color var(--transition-fast);
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links a.active {
+  color: var(--brand-orange);
+}
+
+.mobile-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 28, 28, 0.4);
+  z-index: 1100;
+  display: none;
+}
+
+.mobile-drawer-backdrop.open {
+  display: block;
+}
+
+/* ==========================================================================
+   2. Full-Bleed Hero
+   ========================================================================== */
+.hero-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  background-color: var(--deep-charcoal);
+  z-index: 1;
+}
+
+.hero-parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  transform: translate3d(0, 0, 0) scale(1.04);
+  will-change: transform;
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), filter 600ms ease;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 28, 28, 0.45) 0%,
+    rgba(28, 28, 28, 0.15) 35%,
+    rgba(28, 28, 28, 0.70) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  color: var(--pure-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -6vh;
+  will-change: transform, opacity;
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), opacity 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Smooth Section-Wise Sliding Card Architecture
+   ========================================================================== */
+/* Deck Canvas & Main Stacking Background */
+html, body {
+  background-color: var(--pure-white);
+  color: var(--deep-charcoal);
+  overflow-x: hidden;
+}
+
+main.deck-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--pure-white);
+}
+
+/* ==========================================================================
+   Full-Bleed Sticky Overlapping Curtain Stacking Architecture
+   ========================================================================== */
+@media (min-width: 992px) {
+  main.deck-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .card-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 85px 0 25px;
+    border-radius: 0 !important;
+    background-color: var(--pure-white);
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.12), 0 -2px 8px rgba(0, 0, 0, 0.04);
+    will-change: transform;
+  }
+
+  #hero,
+  #about,
+  #properties,
+  #transactions,
+  #services,
+  #editorial,
+  #contact {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+  }
+
+  #hero {
+    z-index: 1;
+    height: 100vh;
+    background-color: #141414;
+    border-top: none;
+    box-shadow: none;
+    padding: 100px 0 60px;
+  }
+
+  #about {
+    z-index: 2;
+    background-color: var(--pure-white);
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.12), 0 -2px 8px rgba(0, 0, 0, 0.04);
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+  }
+
+  #properties {
+    z-index: 3;
+    background: linear-gradient(135deg, #DFC282 0%, #C5A059 45%, #B38C3B 100%) !important;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.25), 0 -4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  #transactions {
+    z-index: 4;
+    background-color: var(--pure-white);
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.12), 0 -2px 8px rgba(0, 0, 0, 0.04);
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+  }
+
+  #services {
+    z-index: 5;
+    background: linear-gradient(135deg, #DFC282 0%, #C5A059 45%, #B38C3B 100%) !important;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.25), 0 -4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  #editorial {
+    z-index: 6;
+    background-color: var(--pure-white);
+    color: var(--deep-charcoal);
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.12), 0 -2px 8px rgba(0, 0, 0, 0.04);
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+  }
+
+  #contact {
+    z-index: 7;
+    background: linear-gradient(135deg, #DFC282 0%, #C5A059 45%, #B38C3B 100%) !important;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.25), 0 -4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+  }
+}
+
+/* ==========================================================================
+   Royal Golden Theme & Atmospheric Textures
+   Applied to:
+     1. #properties (Curated Sovereign Estates)
+     2. #services (Sovereign Mandates & Services)
+     3. #contact (Initiate a Sovereign Consultation)
+   ========================================================================== */
+#properties,
+#services,
+#contact {
+  background: 
+    radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.35) 0%, rgba(223, 194, 130, 0.15) 55%, transparent 80%),
+    radial-gradient(rgba(14, 14, 14, 0.055) 1.2px, transparent 1.2px),
+    linear-gradient(135deg, #DFC282 0%, #C5A059 45%, #B38C3B 100%) !important;
+  background-size: 100% 100%, 26px 26px, 100% 100% !important;
+  color: #0E0E0E !important;
+}
+
+/* 1. #properties (Curated Sovereign Estates) */
+#properties .royal-eyebrow,
+#properties .eyebrow {
+  color: #1F1706 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+}
+
+#properties .section-title,
+#properties .royal-serif-title {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+}
+
+#properties .portfolio-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.22) !important;
+  padding-bottom: 14px;
+  gap: 20px;
+}
+
+.portfolio-stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.portfolio-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0E0E0E;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(14, 14, 14, 0.18);
+  padding: 4px 10px;
+  backdrop-filter: blur(4px);
+}
+
+.portfolio-stat-dot {
+  width: 6px;
+  height: 6px;
+  background: #0E0E0E;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseGoldDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseGoldDot {
+  0%, 100% { opacity: 0.5; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.portfolio-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+#properties .portfolio-filters {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+#properties .filter-btn {
+  color: rgba(14, 14, 14, 0.72) !important;
+  font-weight: 600 !important;
+  padding: 6px 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#properties .filter-btn .filter-count {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+#properties .filter-btn:hover,
+#properties .filter-btn.active {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #0E0E0E !important;
+}
+
+/* Portfolio Horizontal Carousel Track */
+.portfolio-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.portfolio-carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 2px 18px 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #0E0E0E rgba(14, 14, 14, 0.08);
+  cursor: grab;
+}
+
+.portfolio-carousel-track:active {
+  cursor: grabbing;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar-track {
+  background: rgba(14, 14, 14, 0.08);
+  border-radius: 3px;
+}
+
+.portfolio-carousel-track::-webkit-scrollbar-thumb {
+  background: #0E0E0E;
+  border-radius: 3px;
+}
+
+/* Portfolio Card Design with Locked Uniform Box Sizes & Picture Proportions */
+.portfolio-card {
+  flex: 0 0 360px;
+  width: 360px;
+  min-width: 360px;
+  max-width: 360px;
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+  scroll-snap-align: start;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(14, 14, 14, 0.16) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+  border-color: #0E0E0E !important;
+}
+
+/* Radiant Shimmer Light Sweep across Card */
+.portfolio-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.portfolio-card:hover::after {
+  left: 160%;
+  transition: left 0.85s ease-in-out;
+}
+
+/* Uniform Picture Container (Exact 210px Height on All Cards) */
+.portfolio-card .card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  min-height: 210px;
+  max-height: 210px;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.portfolio-card .card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .card-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* Uniform Card Body Container (Exact 240px Height on All Cards) */
+.portfolio-card .card-body {
+  height: 240px;
+  min-height: 240px;
+  max-height: 240px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.portfolio-card .property-title {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+  height: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portfolio-card .property-subtitle {
+  color: #2D2D2D !important;
+  font-size: 12px;
+  margin-bottom: 3px;
+  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portfolio-card .property-meta {
+  color: #555555 !important;
+  font-size: 12px;
+  margin-bottom: 6px;
+  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portfolio-card .property-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  margin: 4px 0 10px;
+}
+
+.portfolio-card .property-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #2C2C2C;
+  background: #F4F4F2;
+  padding: 2px 7px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.portfolio-card:hover .property-tag {
+  background: #0E0E0E;
+  color: #DFC282;
+  border-color: #0E0E0E;
+}
+
+.portfolio-card .property-price {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.portfolio-card .btn-royal-outline {
+  border: 1.5px solid #0E0E0E !important;
+  color: #0E0E0E !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  padding: 6px 14px;
+  font-size: 10px;
+  line-height: 1;
+}
+  background: transparent !important;
+  font-weight: 700 !important;
+  padding: 7px 16px;
+  font-size: 10px;
+}
+
+.portfolio-card .btn-royal-outline:hover {
+  background: #0E0E0E !important;
+  color: #DFC282 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* 2. #services (Sovereign Mandates & Services) */
+#services .royal-eyebrow,
+#services .eyebrow {
+  color: #1F1706 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+}
+
+#services .section-title,
+#services .royal-serif-title {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+}
+
+#services .services-container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.service-tier-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(16, 16, 16, 0.88);
+  color: var(--royal-gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  border: 1px solid var(--royal-border);
+  backdrop-filter: blur(6px);
+}
+
+.interactive-service-card {
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(14, 14, 14, 0.16) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.interactive-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24) !important;
+  border-color: #0E0E0E !important;
+}
+
+.interactive-service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.interactive-service-card:hover::after {
+  left: 160%;
+  transition: left 0.85s ease-in-out;
+}
+
+/* Exact Same Picture Height as Portfolio (210px) */
+.service-image-wrap,
+.interactive-service-card .service-image-wrap {
+  width: 100% !important;
+  height: 210px !important;
+  min-height: 210px !important;
+  max-height: 210px !important;
+  aspect-ratio: auto !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.service-image-wrap img,
+.interactive-service-card .service-image-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+.service-content,
+.interactive-service-card .service-content {
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+#services .service-title {
+  color: #0E0E0E !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  font-size: 19px;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+#services .service-description {
+  color: #2B2B2B !important;
+  line-height: 1.45 !important;
+  font-size: 13px;
+  height: 58px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 6px;
+}
+
+.service-metrics-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 46px;
+  min-height: 46px;
+  max-height: 46px;
+  margin: 4px 0 10px;
+  padding: 6px 10px;
+  background: #F8F7F4;
+  border-left: 2px solid #0E0E0E;
+  box-sizing: border-box;
+}
+
+.service-metric-item {
+  font-size: 11px;
+  color: #424242;
+  letter-spacing: 0.02em;
+}
+
+.service-metric-item strong {
+  color: #0E0E0E;
+  font-weight: 700;
+}
+
+#services .ghost-link,
+#services .ghost-link-orange {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #0E0E0E !important;
+  text-decoration: none !important;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+#services .ghost-link:hover,
+#services .ghost-link-orange:hover {
+  color: #4A4A4A !important;
+  border-bottom-color: #4A4A4A !important;
+}
+
+/* 3. #contact (Initiate a Sovereign Consultation) */
+#contact .royal-eyebrow,
+#contact .eyebrow {
+  color: #1F1706 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+}
+
+#contact .contact-heading,
+#contact .royal-serif-title {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+}
+
+#contact .contact-intro {
+  color: #1D180F !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+#contact .contact-details-list {
+  border-top: 1px solid rgba(14, 14, 14, 0.22) !important;
+}
+
+#contact .contact-detail-label {
+  color: #2E2512 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  font-size: 11px !important;
+}
+
+#contact .contact-detail-value,
+#contact .contact-detail-value a {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+}
+
+#contact .contact-detail-value a:hover {
+  color: #333333 !important;
+  text-decoration: underline !important;
+}
+
+#contact .contact-form {
+  background: rgba(255, 255, 255, 0.96) !important;
+  padding: 26px 28px !important;
+  border: 1px solid rgba(14, 14, 14, 0.14) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12) !important;
+}
+
+#contact .form-label {
+  color: #0E0E0E !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+#contact .form-input,
+#contact .form-select,
+#contact .form-textarea {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(14, 14, 14, 0.25) !important;
+  color: #0E0E0E !important;
+  font-weight: 500 !important;
+}
+
+#contact .form-input:focus,
+#contact .form-select:focus,
+#contact .form-textarea:focus {
+  border-color: #0E0E0E !important;
+  box-shadow: 0 0 0 1px #0E0E0E !important;
+}
+
+#contact .form-input::placeholder,
+#contact .form-textarea::placeholder {
+  color: #757575 !important;
+}
+
+#contact .interest-label {
+  border: 1px solid rgba(14, 14, 14, 0.25) !important;
+  color: #0E0E0E !important;
+  background: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+#contact .interest-option input[type="radio"]:checked + .interest-label {
+  background-color: #0E0E0E !important;
+  color: #DFC282 !important;
+  border-color: #0E0E0E !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+#contact .btn-royal-gold,
+#contact button[type="submit"] {
+  background: #0E0E0E !important;
+  color: #DFC282 !important;
+  border: 1px solid #0E0E0E !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+#contact .btn-royal-gold:hover,
+#contact button[type="submit"]:hover {
+  background: #242424 !important;
+  color: #F0DBA5 !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 991px) {
+  .card-section {
+    position: relative !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
+
+.site-footer {
+  display: none;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-statement-box {
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.hero-pill-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: var(--brand-orange);
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: var(--font-hero);
+  font-weight: var(--weight-hero);
+  line-height: var(--line-hero);
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  color: var(--pure-white);
+}
+
+.hero-subtitle {
+  font-size: var(--font-body);
+  font-weight: var(--weight-body);
+  line-height: var(--line-body);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Hero Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  right: var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+
+.hero-scroll-indicator:hover {
+  color: var(--brand-orange);
+}
+
+.scroll-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(180deg, var(--brand-orange), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: scaleY(0.3); transform-origin: top; opacity: 0.4; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(0.3); transform-origin: bottom; opacity: 0.4; }
+}
+
+/* ==========================================================================
+   2. Ben Bandari — Sovereign Royal Showcase & Parallax Stage
+   ========================================================================== */
+.royal-about-section {
+  padding-top: 90px;
+  padding-bottom: 110px;
+}
+
+.royal-section-header {
+  margin-bottom: 36px;
+}
+
+.royal-crest-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  padding: 6px 18px;
+  border: 1px solid var(--royal-border);
+  background: rgba(197, 160, 89, 0.05);
+  margin-bottom: 18px;
+}
+
+.crest-diamond {
+  color: var(--royal-gold);
+  font-size: 8px;
+}
+
+.royal-eyebrow {
+  color: var(--royal-gold) !important;
+  letter-spacing: 0.2em !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+.royal-serif-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(32px, 3.5vw, 48px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.18 !important;
+  color: var(--deep-charcoal) !important;
+}
+
+.royal-main-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 4.2vw, 54px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.14;
+  color: var(--deep-charcoal);
+  margin-bottom: 14px;
+}
+
+.royal-subtitle {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--graphite);
+  max-width: 740px;
+}
+
+/* ==========================================================================
+   2. Ben Bandari — Sovereign Royal Showcase Card
+   ========================================================================== */
+.royal-about-section {
+  background-color: var(--pure-white);
+  padding: 85px 0 25px;
+}
+
+.royal-about-container {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.royal-portrait-column {
+  width: 100%;
+}
+
+.royal-portrait-stage {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: hidden;
+  border: 1px solid var(--royal-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background-color: #0E0E0E;
+}
+
+.royal-stage-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.royal-stage-img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  object-position: center 36%;
+  will-change: transform;
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.royal-stage-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.05) 0%,
+    rgba(10, 10, 10, 0) 35%,
+    rgba(10, 10, 10, 0.35) 70%,
+    rgba(10, 10, 10, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+.royal-stage-plaque {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(14, 14, 14, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--royal-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.plaque-emblem {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--royal-gold);
+  border: 1px solid var(--royal-border);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(197, 160, 89, 0.08);
+  flex-shrink: 0;
+}
+
+.plaque-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plaque-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--pure-white);
+}
+
+.plaque-role {
+  font-size: 12px;
+  color: var(--royal-gold-light);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.plaque-mandate {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.royal-narrative-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.royal-section-header {
+  margin-bottom: 20px;
+}
+
+.royal-pull-quote {
+  position: relative;
+  padding: 20px 24px;
+  background: var(--soft-white);
+  border-left: 3px solid var(--royal-gold);
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  border-right: 1px solid rgba(197, 160, 89, 0.2);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  margin-bottom: 20px;
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--royal-gold);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: -18px;
+}
+
+.royal-pull-quote p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--deep-charcoal);
+  margin-bottom: 0;
+}
+
+.royal-stats-deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.royal-stat-card {
+  padding: 14px 16px;
+  background: var(--pure-white);
+  border: 1px solid var(--royal-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.royal-stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--royal-gold-dark);
+  line-height: 1.05;
+  margin-bottom: 4px;
+}
+
+.royal-stat-sub {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--graphite);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.royal-mandate-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--light-grey);
+  padding-top: 16px;
+}
+
+.pillar-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.pillar-icon {
+  color: var(--royal-gold);
+  font-size: 9px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.pillar-item h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--deep-charcoal);
+  margin-bottom: 2px;
+}
+
+.pillar-item p {
+  font-size: 12px;
+  color: var(--mid-grey);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   3. Featured Properties — Sovereign Showcase Deck
+   ========================================================================== */
+.royal-properties-section {
+  background-color: var(--pure-white);
+  padding: 0;
+}
+
+.royal-properties-container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.sovereign-showcase-grid {
+  display: grid;
+  grid-template-columns: 6.5fr 5.5fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.showcase-flagship-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--light-grey);
+  background: var(--pure-white);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.flagship-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+}
+
+.flagship-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-flagship-card:hover .flagship-image-wrap img {
+  transform: scale(1.03);
+}
+
+.flagship-info-wrap {
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.showcase-duo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.showcase-compact-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border: 1px solid var(--light-grey);
+  background: var(--pure-white);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  height: calc(50% - 8px);
+}
+
+.compact-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.compact-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-compact-card:hover .compact-image-wrap img {
+  transform: scale(1.04);
+}
+
+.compact-info-wrap {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pillar-item p {
+  font-size: 14px;
+  color: var(--mid-grey);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   4. Featured Properties — The Portfolio
+   ========================================================================== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.section-title {
+  font-size: var(--font-section);
+  font-weight: var(--weight-section);
+  line-height: var(--line-section);
+  color: var(--deep-charcoal);
+}
+
+.portfolio-filters {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--mid-grey);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  color: var(--royal-gold-dark);
+  font-weight: 600;
+  border-bottom: 2px solid var(--royal-gold);
+}
+
+/* Primary Hero Listing */
+.featured-hero-card {
+  margin-bottom: 48px;
+}
+
+.featured-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 640px;
+  overflow: hidden;
+  background-color: var(--soft-white);
+}
+
+.featured-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-hero-card:hover .featured-image-container img {
+  transform: scale(1.02);
+}
+
+.property-status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(16, 16, 16, 0.88);
+  color: var(--royal-gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--royal-border);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.property-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding-bottom: 8px;
+}
+
+.property-title {
+  font-size: var(--font-prop-title);
+  font-weight: var(--weight-prop-title);
+  line-height: var(--line-prop-title);
+  color: var(--deep-charcoal);
+  margin-bottom: 6px;
+}
+
+.property-subtitle {
+  font-size: 16px;
+  color: var(--graphite);
+  margin-bottom: 8px;
+}
+
+.property-meta {
+  font-size: var(--font-caption);
+  color: var(--mid-grey);
+  line-height: var(--line-caption);
+}
+
+.property-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--deep-charcoal);
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+/* Two-Column Grid for Secondary Properties */
+.properties-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.property-secondary-card {
+  position: relative;
+}
+
+.secondary-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--soft-white);
+}
+
+.secondary-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.property-secondary-card:hover .secondary-image-container img {
+  transform: scale(1.02);
+}
+
+/* Full-width Exceptional Listing */
+.exceptional-listing-banner {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-grey);
+}
+
+/* ==========================================================================
+   5. Selected Transactions
+   ========================================================================== */
+/* Sovereign Transactions — Horizontal Track & Carousel */
+.transactions-container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.transactions-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  gap: 24px;
+}
+
+.transactions-intro {
+  max-width: 620px;
+  font-size: 14px;
+  color: var(--graphite);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.transactions-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.transactions-count-pill {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--royal-gold-dark);
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 6px 14px;
+}
+
+.carousel-arrow-group {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--pure-white);
+  border: 1px solid var(--royal-border);
+  color: var(--deep-charcoal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.carousel-arrow-btn:hover {
+  background: var(--royal-gold);
+  border-color: var(--royal-gold);
+  color: #121212;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+}
+
+.carousel-arrow-btn:active {
+  transform: translateY(0);
+}
+
+.transactions-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.transactions-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 2px 14px 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--royal-gold) rgba(0, 0, 0, 0.06);
+  cursor: grab;
+}
+
+.transactions-track:active {
+  cursor: grabbing;
+}
+
+.transactions-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.transactions-track::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.transactions-track::-webkit-scrollbar-thumb {
+  background: var(--royal-gold);
+  border-radius: 4px;
+}
+
+/* Sovereign Transactions Card Design - Uniform 450px Box & 210px Picture matching Golden Reference */
+.transactions-track .transaction-card {
+  flex: 0 0 360px;
+  width: 360px;
+  min-width: 360px;
+  max-width: 360px;
+  height: 450px !important;
+  min-height: 450px !important;
+  max-height: 450px !important;
+  scroll-snap-align: start;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(14, 14, 14, 0.16) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.transactions-track .transaction-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24) !important;
+  border-color: #0E0E0E !important;
+}
+
+/* Radiant Shimmer Light Sweep across Transaction Card */
+.transactions-track .transaction-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.transactions-track .transaction-card:hover::after {
+  left: 160%;
+  transition: left 0.85s ease-in-out;
+}
+
+/* Exact Same Picture Height as Golden Reference (210px) */
+.transactions-track .transaction-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px !important;
+  min-height: 210px !important;
+  max-height: 210px !important;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.transactions-track .transaction-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transactions-track .transaction-card:hover .transaction-image-wrap img {
+  transform: scale(1.06);
+}
+
+.transactions-track .transaction-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(16, 16, 16, 0.9);
+  color: #DFC282;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  border: 1px solid rgba(223, 194, 130, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* Uniform Card Body Container - Exact 240px Height matching Golden Reference */
+.transactions-track .transaction-details {
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  padding: 16px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+.transactions-track .transaction-location {
+  font-family: 'Cinzel', serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #0E0E0E !important;
+  margin-bottom: 2px;
+  height: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transactions-track .transaction-type {
+  font-size: 12px !important;
+  color: #2D2D2D !important;
+  margin-bottom: 3px;
+  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transactions-track .transaction-meta {
+  font-size: 12px !important;
+  color: #555555 !important;
+  margin-bottom: 6px;
+  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transactions-track .transaction-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  margin: 4px 0 10px;
+}
+
+.transactions-track .transaction-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #2C2C2C;
+  background: #F4F4F2;
+  padding: 2px 7px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.transactions-track .transaction-card:hover .transaction-tag {
+  background: #0E0E0E;
+  color: #DFC282;
+  border-color: #0E0E0E;
+}
+
+.transactions-track .transaction-outcome {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin-top: auto !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+}
+
+.transactions-track .transaction-price {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0E0E0E !important;
+  line-height: 1 !important;
+  display: block;
+}
+
+.transactions-track .transaction-date {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #666666 !important;
+  display: block;
+  margin-top: 2px;
+}
+
+.transactions-track .transaction-status-pill {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0E0E0E;
+  background: #F4F4F2;
+  border: 1.5px solid #0E0E0E;
+  padding: 6px 12px;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.transactions-track .transaction-card:hover .transaction-status-pill {
+  background: #0E0E0E;
+  color: #DFC282;
+}
+
+/* ==========================================================================
+   6. Services — How Ben Works
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pure-white);
+  border: 1px solid var(--light-grey);
+  height: 100%;
+}
+
+.service-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.service-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.service-card:hover .service-image-wrap img {
+  transform: scale(1.03);
+}
+
+.service-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-title {
+  font-size: var(--font-subheading);
+  font-weight: 500;
+  color: var(--deep-charcoal);
+  margin-bottom: 12px;
+}
+
+.service-description {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--graphite);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   7. Editorial Section — The Real Estate Perspective
+   ========================================================================== */
+.editorial-section {
+  background-color: var(--pure-white);
+  color: var(--deep-charcoal);
+  padding: 0;
+  overflow: hidden;
+}
+
+.editorial-header {
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.editorial-divider {
+  width: 48px;
+  height: 2px;
+  background-color: var(--royal-gold);
+  margin-bottom: 24px;
+}
+
+.editorial-heading {
+  font-size: var(--font-section);
+  font-weight: var(--weight-section);
+  line-height: var(--line-section);
+  color: var(--deep-charcoal);
+  margin-bottom: 16px;
+}
+
+.editorial-subtitle {
+  font-size: var(--font-body);
+  color: var(--graphite);
+  line-height: var(--line-body);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.editorial-article-card {
+  height: 270px;
+  min-height: 270px;
+  max-height: 270px;
+  box-sizing: border-box;
+  border-top: 2px solid var(--royal-gold);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-category {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--royal-gold-dark);
+  font-weight: 700;
+  margin-bottom: 8px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.article-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--deep-charcoal);
+  margin-bottom: 8px;
+  height: 48px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.article-excerpt {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--graphite);
+  margin-bottom: 12px;
+  height: 58px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.editorial-article-card button,
+.editorial-article-card .ghost-link {
+  display: inline-flex !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--brand-orange) !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  color: var(--brand-orange) !important;
+  padding: 0 0 6px 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+
+.editorial-article-card button:focus,
+.editorial-article-card button:focus-visible,
+.editorial-article-card .ghost-link:focus,
+.editorial-article-card .ghost-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--brand-orange) !important;
+}
+
+/* ==========================================================================
+   8. Contact — Start a Conversation
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.contact-left {
+  padding-right: 12px;
+}
+
+.contact-heading {
+  font-size: var(--font-section);
+  font-weight: var(--weight-section);
+  line-height: var(--line-section);
+  color: var(--deep-charcoal);
+  margin-bottom: 12px;
+}
+
+.contact-intro {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid var(--light-grey);
+  padding-top: 28px;
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-detail-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mid-grey);
+  margin-bottom: 4px;
+}
+
+.contact-detail-value {
+  font-size: 16px;
+  color: var(--deep-charcoal);
+  font-weight: 500;
+}
+
+.contact-detail-value a:hover {
+  color: var(--brand-orange);
+}
+
+/* Form Styling (Per Reference: transparent inputs, 1px light-grey borders) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--deep-charcoal);
+  margin-bottom: 4px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--light-grey);
+  border-radius: 0;
+  padding: 10px 14px;
+  color: var(--deep-charcoal);
+  font-size: 14px;
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--brand-orange);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.interest-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.interest-option {
+  position: relative;
+}
+
+.interest-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.interest-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border: 1px solid var(--light-grey);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--graphite);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.interest-option input[type="radio"]:checked + .interest-label {
+  border-color: var(--royal-gold);
+  color: var(--royal-gold-dark);
+  background-color: rgba(197, 160, 89, 0.12);
+  box-shadow: 0 0 0 1px var(--royal-gold);
+  font-weight: 600;
+}
+
+.form-status {
+  display: none;
+  padding: 14px 18px;
+  border-radius: var(--radius-button);
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
+.form-status.success {
+  display: block;
+  background-color: var(--soft-white);
+  border: 1px solid var(--brand-orange);
+  color: var(--deep-charcoal);
+}
+
+.form-status.error {
+  display: block;
+  background-color: #fff1f0;
+  border: 1px solid #ff4d4f;
+  color: #cf1322;
+}
+
+/* ==========================================================================
+   9. Footer
+   ========================================================================== */
+.site-footer {
+  background-color: var(--deep-charcoal);
+  color: var(--pure-white);
+  padding-top: 80px;
+  padding-bottom: 40px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 4fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.footer-brand {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--pure-white);
+}
+
+.footer-brand span {
+  color: var(--brand-orange);
+}
+
+.footer-brand-statement {
+  font-size: 14px;
+  color: var(--mid-grey);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-column-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-orange);
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--brand-orange);
+}
+
+.footer-contact-block {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.footer-contact-block a {
+  color: var(--pure-white);
+  display: block;
+  margin-top: 4px;
+}
+
+.footer-contact-block a:hover {
+  color: var(--brand-orange);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  font-size: 13px;
+  color: var(--mid-grey);
+}
+
+/* ==========================================================================
+   Modals & Drawers (Interactive Detail Overlays)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 28, 28, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--pure-white);
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 0px;
+  position: relative;
+  padding: 48px;
+  border: 1px solid var(--light-grey);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: var(--deep-charcoal);
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  color: var(--brand-orange);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --section-spacing: 72px;
+    --content-padding: 28px;
+  }
+
+  .card-section {
+    position: relative !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  .royal-about-container {
+    grid-template-columns: 1fr;
+    max-height: none;
+    gap: 36px;
+  }
+
+  .royal-portrait-column .royal-portrait-stage {
+    height: 380px;
+  }
+
+  .sovereign-showcase-grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .showcase-compact-card {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .compact-image-wrap {
+    height: 200px;
+  }
+
+  .transactions-grid,
+  .services-grid,
+  .editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 56px;
+    --content-padding: 20px;
+    --font-hero: 32px;
+    --font-section: 24px;
+    --font-body: 16px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 0;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  .nav-menu,
+  .nav-actions .btn-orange-outline,
+  .nav-actions .btn-royal-outline {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .royal-portrait-stage {
+    height: 320px;
+    margin-bottom: 36px;
+  }
+
+  .royal-stage-plaque {
+    padding: 12px 16px;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    gap: 12px;
+  }
+
+  .plaque-emblem {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .plaque-name {
+    font-size: 13px;
+  }
+
+  .plaque-mandate {
+    display: none;
+  }
+
+  .royal-stats-deck {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .royal-pull-quote {
+    padding: 24px 20px;
+  }
+
+  .royal-pull-quote p {
+    font-size: 18px;
+  }
+
+  .properties-grid-two,
+  .transactions-grid,
+  .services-grid,
+  .editorial-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .property-info-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .property-price {
+    text-align: left;
+  }
+
+  .interest-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+
+/* ==========================================================================
+   Architectural Section Framing & Corner Borders
+   ========================================================================== */
+.section-corner-frame {
+  position: absolute;
+  top: 96px;
+  bottom: 26px;
+  left: 26px;
+  right: 26px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+/* Subtle architectural perimeter hairline */
+.section-corner-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid currentColor;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* Bold 2px Architectural Corner Brackets */
+.section-corner-frame .corner {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-color: currentColor;
+  pointer-events: none;
+}
+
+.section-corner-frame .corner-tl {
+  top: 0;
+  left: 0;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.section-corner-frame .corner-tr {
+  top: 0;
+  right: 0;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.section-corner-frame .corner-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.section-corner-frame .corner-br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+/* Section-Specific Theme Tones */
+/* 1. Hero Section (Dark Photo) */
+#hero .section-corner-frame {
+  color: #DFC282;
+}
+
+/* 2. About Section (Pure White) */
+#about .section-corner-frame {
+  color: #C5A059;
+}
+
+/* 3. Properties Section (Royal Gold) */
+#properties .section-corner-frame {
+  color: #0E0E0E;
+}
+
+/* 4. Transactions Section (Pure White) */
+#transactions .section-corner-frame {
+  color: #C5A059;
+}
+
+/* 5. Services Section (Royal Gold) */
+#services .section-corner-frame {
+  color: #0E0E0E;
+}
+
+/* 6. Editorial Section (Obsidian Black) */
+#editorial .section-corner-frame {
+  color: #DFC282;
+}
+
+/* 7. Contact Section (Royal Gold - Reference View) */
+#contact .section-corner-frame {
+  color: #0E0E0E;
+}
+
+@media (max-width: 991px) {
+  .section-corner-frame {
+    top: 86px;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+  }
+  .section-corner-frame .corner {
+    width: 28px;
+    height: 28px;
+  }
+}

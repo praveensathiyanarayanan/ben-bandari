@@ -3245,11 +3245,11 @@ main.deck-container {
   color: #C5A059 !important;
 }
 
-/* 2. White Borders: Golden Sections (Properties, Services, Contact) */
+/* 2. Black Borders: Golden Sections (Properties, Services, Contact) */
 #properties .section-corner-frame,
 #services .section-corner-frame,
 #contact .section-corner-frame {
-  color: #FFFFFF !important;
+  color: #0E0E0E !important;
 }
 
 @media (max-width: 991px) {

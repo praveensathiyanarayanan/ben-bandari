@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650" fill="none" stroke="#C27A58" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.32">
+  <!-- Perspective Vanishing Line Guides -->
+  <line x1="800" y1="240" x2="160" y2="350" stroke-width="0.6" stroke-dasharray="4,4" opacity="0.4"/>
+  <line x1="800" y1="480" x2="120" y2="400" stroke-width="0.6" stroke-dasharray="4,4" opacity="0.4"/>
+  
+  <!-- Modernist Cantilever Roof Slab -->
+  <polygon points="260,180 620,120 780,170 420,230" fill="none" stroke-width="1.8"/>
+  <polygon points="260,186 620,126 780,176 420,236" fill="none" stroke-width="1.2"/>
+  <line x1="260" y1="180" x2="260" y2="186"/>
+  <line x1="620" y1="120" x2="620" y2="126"/>
+  <line x1="780" y1="170" x2="780" y2="176"/>
+  <line x1="420" y1="230" x2="420" y2="236"/>
+
+  <!-- Upper Level Floor & Balcony Slab -->
+  <polygon points="300,320 620,270 770,305 450,355" fill="none" stroke-width="1.6"/>
+  <polygon points="300,328 620,278 770,313 450,363" fill="none" stroke-width="1.2"/>
+  <line x1="300" y1="320" x2="300" y2="328"/>
+  <line x1="450" y1="355" x2="450" y2="363"/>
+  <line x1="770" y1="305" x2="770" y2="313"/>
+
+  <!-- Upper Level Glass Facade & Mullions -->
+  <line x1="380" y1="223" x2="380" y2="333"/>
+  <line x1="420" y1="230" x2="420" y2="355" stroke-width="1.8"/>
+  <line x1="460" y1="220" x2="460" y2="347"/>
+  <line x1="500" y1="210" x2="500" y2="338"/>
+  <line x1="540" y1="200" x2="540" y2="330"/>
+  <line x1="580" y1="190" x2="580" y2="322"/>
+  <line x1="620" y1="180" x2="620" y2="315"/>
+  <line x1="670" y1="175" x2="670" y2="310"/>
+  <line x1="720" y1="172" x2="720" y2="307"/>
+
+  <!-- Upper Balcony Glass Railing -->
+  <polygon points="280,285 435,320 435,355 280,320" fill="none" stroke-width="0.8" opacity="0.6"/>
+  <line x1="320" y1="294" x2="320" y2="329" stroke-width="0.6"/>
+  <line x1="360" y1="303" x2="360" y2="338" stroke-width="0.6"/>
+  <line x1="400" y1="312" x2="400" y2="347" stroke-width="0.6"/>
+
+  <!-- Ground Level Foundation & Terrace Slab -->
+  <polygon points="240,490 580,430 790,465 450,525" fill="none" stroke-width="2"/>
+  <polygon points="240,500 580,440 790,475 450,535" fill="none" stroke-width="1.2"/>
+  <line x1="240" y1="490" x2="240" y2="500"/>
+  <line x1="450" y1="525" x2="450" y2="535"/>
+  <line x1="790" y1="465" x2="790" y2="475"/>
+
+  <!-- Ground Level Structural Columns -->
+  <line x1="340" y1="325" x2="340" y2="475" stroke-width="2.2"/>
+  <line x1="346" y1="326" x2="346" y2="476" stroke-width="1"/>
+  <line x1="450" y1="363" x2="450" y2="525" stroke-width="2.2"/>
+  <line x1="456" y1="362" x2="456" y2="524" stroke-width="1"/>
+  <line x1="560" y1="340" x2="560" y2="490" stroke-width="2.2"/>
+  <line x1="680" y1="310" x2="680" y2="450" stroke-width="2.2"/>
+
+  <!-- Ground Floor Large Sliding Glass Fenestration -->
+  <line x1="380" y1="345" x2="380" y2="500"/>
+  <line x1="415" y1="353" x2="415" y2="512"/>
+  <line x1="500" y1="345" x2="500" y2="500"/>
+  <line x1="535" y1="337" x2="535" y2="492"/>
+  <line x1="600" y1="322" x2="600" y2="475"/>
+  <line x1="640" y1="315" x2="640" y2="465"/>
+
+  <!-- Architectural Entrance Steps -->
+  <polygon points="280,515 420,535 420,542 280,522" fill="none" stroke-width="1"/>
+  <polygon points="260,525 400,545 400,552 260,532" fill="none" stroke-width="1"/>
+
+  <!-- Minimalist Architectural Trees & Landscape Hatching -->
+  <!-- Tree 1 Behind Upper Left -->
+  <path d="M220,310 C220,260 210,230 230,190 C250,150 290,160 300,190 C310,160 350,170 340,210 C340,260 320,290 320,330" stroke-width="0.8" opacity="0.45"/>
+  <line x1="270" y1="210" x2="270" y2="320" stroke-width="1.2" opacity="0.6"/>
+  <!-- Tree 2 Far Right -->
+  <path d="M730,420 C710,360 700,320 730,270 C750,230 800,240 800,280 C800,340 780,390 770,440" stroke-width="0.8" opacity="0.5"/>
+  <line x1="755" y1="300" x2="755" y2="430" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- Horizontal Landscape & Ground Contours -->
+  <path d="M120,490 Q220,480 320,510 T550,520 T790,470" stroke-width="0.8" opacity="0.35"/>
+  <path d="M140,510 Q240,500 360,530 T600,535 T800,480" stroke-width="0.6" opacity="0.25"/>
+</svg>

@@ -782,6 +782,10 @@ main.deck-container {
 /* ==========================================================================
    Architectural Technical CAD Blueprint System (All Sections Except Hero)
    ========================================================================== */
+.card-section {
+  isolation: isolate;
+}
+
 .section-blueprint-bg {
   position: absolute;
   inset: 0;
@@ -791,7 +795,22 @@ main.deck-container {
   background-size: cover;
   background-position: center;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0 !important;
+}
+
+.properties-blueprint-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 250px;
+  background-image: url('villa-sketch.svg');
+  background-repeat: no-repeat;
+  background-position: top 10px right 20px;
+  background-size: contain;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0 !important;
 }
 
 .section-blueprint-bg.blueprint-schematic {
@@ -808,7 +827,7 @@ main.deck-container {
 }
 
 #properties .section-blueprint-bg {
-  opacity: 0.38;
+  opacity: 0.18;
 }
 
 #transactions .section-blueprint-bg {
@@ -816,16 +835,54 @@ main.deck-container {
 }
 
 #services .section-blueprint-bg {
-  opacity: 0.35;
+  opacity: 0.25;
 }
 
 #editorial .section-blueprint-bg {
-  opacity: 0.30;
+  opacity: 0.22;
   filter: invert(85%) sepia(20%) saturate(700%) hue-rotate(5deg) brightness(105%) contrast(90%);
 }
 
 #contact .section-blueprint-bg {
-  opacity: 0.35;
+  opacity: 0.25;
+}
+
+/* Guarantee All Content & Cards Are Strictly Above Blueprint Backgrounds */
+.card-section > .container,
+.royal-about-container,
+.royal-properties-container,
+.transactions-container,
+.services-container,
+.editorial-section .container,
+.contact-grid,
+.portfolio-header-block,
+.portfolio-carousel-wrapper,
+.portfolio-footer-row,
+.transactions-header-row,
+.transactions-scroll-wrapper,
+.services-grid,
+.editorial-header,
+.editorial-grid,
+.contact-left,
+.consultation-form-card,
+.section-corner-frame {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.portfolio-card,
+.transaction-card,
+.service-card,
+.interactive-service-card,
+.editorial-article-card,
+.royal-portrait-column,
+.royal-narrative-column,
+.royal-stat-card,
+.royal-pull-quote,
+.legacy-trust-banner,
+.contact-form {
+  position: relative !important;
+  z-index: 6 !important;
 }
 
 .royal-properties-container {

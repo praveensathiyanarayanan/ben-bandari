@@ -3170,7 +3170,9 @@ main.deck-container {
 
 
 /* ==========================================================================
-   Architectural Section Framing & Corner Borders (Universal Dark For All Sections)
+   Architectural Section Framing & Corner Borders
+   - Golden border for Hero and White sections (About, Track Record, Editorial)
+   - White border for Gold sections (Portfolio, Services, Contact)
    ========================================================================== */
 .section-corner-frame {
   position: absolute !important;
@@ -3180,10 +3182,9 @@ main.deck-container {
   right: 26px;
   pointer-events: none;
   z-index: 25 !important;
-  color: #0E0E0E !important;
 }
 
-/* Subtle architectural perimeter hairline */
+/* Architectural perimeter hairline */
 .section-corner-frame::before {
   content: '';
   position: absolute;
@@ -3192,7 +3193,7 @@ main.deck-container {
   right: 0;
   bottom: 0;
   border: 1px solid currentColor;
-  opacity: 0.25;
+  opacity: 0.38;
   pointer-events: none;
 }
 
@@ -3233,15 +3234,22 @@ main.deck-container {
   border-right: 2px solid currentColor;
 }
 
-/* Universal Dark Borders for ALL Sections Including Hero */
-#hero .section-corner-frame,
+/* 1. Golden Borders: Hero & White Sections (About, Transactions, Editorial) */
+#hero .section-corner-frame {
+  color: #DFC282 !important;
+}
+
 #about .section-corner-frame,
-#properties .section-corner-frame,
 #transactions .section-corner-frame,
+#editorial .section-corner-frame {
+  color: #C5A059 !important;
+}
+
+/* 2. White Borders: Golden Sections (Properties, Services, Contact) */
+#properties .section-corner-frame,
 #services .section-corner-frame,
-#editorial .section-corner-frame,
 #contact .section-corner-frame {
-  color: #0E0E0E !important;
+  color: #FFFFFF !important;
 }
 
 @media (max-width: 991px) {

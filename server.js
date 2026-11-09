@@ -89,6 +89,11 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
+    // Disable caching in development so browser always receives latest edits
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+
     fs.readFile(filePath, (err2, content) => {
       if (err2) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });

@@ -1,76 +1,186 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650" fill="none" stroke="#C27A58" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.32">
-  <!-- Perspective Vanishing Line Guides -->
-  <line x1="800" y1="240" x2="160" y2="350" stroke-width="0.6" stroke-dasharray="4,4" opacity="0.4"/>
-  <line x1="800" y1="480" x2="120" y2="400" stroke-width="0.6" stroke-dasharray="4,4" opacity="0.4"/>
-  
-  <!-- Modernist Cantilever Roof Slab -->
-  <polygon points="260,180 620,120 780,170 420,230" fill="none" stroke-width="1.8"/>
-  <polygon points="260,186 620,126 780,176 420,236" fill="none" stroke-width="1.2"/>
-  <line x1="260" y1="180" x2="260" y2="186"/>
-  <line x1="620" y1="120" x2="620" y2="126"/>
-  <line x1="780" y1="170" x2="780" y2="176"/>
-  <line x1="420" y1="230" x2="420" y2="236"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" fill="none" stroke="#4A3425" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <!-- Cross-hatching pattern for architectural shadows -->
+    <pattern id="archHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#4A3425" stroke-width="0.75" opacity="0.35" />
+    </pattern>
+    <pattern id="archHatchDense" width="5" height="5" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#4A3425" stroke-width="0.9" opacity="0.45" />
+    </pattern>
+  </defs>
 
-  <!-- Upper Level Floor & Balcony Slab -->
-  <polygon points="300,320 620,270 770,305 450,355" fill="none" stroke-width="1.6"/>
-  <polygon points="300,328 620,278 770,313 450,363" fill="none" stroke-width="1.2"/>
-  <line x1="300" y1="320" x2="300" y2="328"/>
-  <line x1="450" y1="355" x2="450" y2="363"/>
-  <line x1="770" y1="305" x2="770" y2="313"/>
+  <!-- Architectural Drafting Grid & Datum Lines -->
+  <g opacity="0.35" stroke="#5A402D" stroke-width="0.7">
+    <line x1="80" y1="520" x2="1180" y2="520" stroke-dasharray="8,6" />
+    <line x1="350" y1="50" x2="350" y2="650" stroke-dasharray="4,8" />
+    <line x1="720" y1="40" x2="720" y2="650" stroke-dasharray="4,8" />
+    <line x1="1050" y1="60" x2="1050" y2="650" stroke-dasharray="4,8" />
+    <!-- Horizon / Vanishing lines -->
+    <line x1="120" y1="360" x2="1180" y2="440" stroke-dasharray="3,6" opacity="0.4" />
+    <line x1="1180" y1="180" x2="320" y2="420" stroke-dasharray="4,6" opacity="0.3" />
+  </g>
 
-  <!-- Upper Level Glass Facade & Mullions -->
-  <line x1="380" y1="223" x2="380" y2="333"/>
-  <line x1="420" y1="230" x2="420" y2="355" stroke-width="1.8"/>
-  <line x1="460" y1="220" x2="460" y2="347"/>
-  <line x1="500" y1="210" x2="500" y2="338"/>
-  <line x1="540" y1="200" x2="540" y2="330"/>
-  <line x1="580" y1="190" x2="580" y2="322"/>
-  <line x1="620" y1="180" x2="620" y2="315"/>
-  <line x1="670" y1="175" x2="670" y2="310"/>
-  <line x1="720" y1="172" x2="720" y2="307"/>
+  <!-- Trees & Foliage: Left Garden Buffer -->
+  <g opacity="0.75" stroke="#4A3425">
+    <!-- Tree 1 (Large left foreground tree) -->
+    <path d="M 330 460 C 310 400 300 340 330 280 C 350 240 400 230 430 260 C 460 230 510 240 520 280 C 540 330 520 380 490 420 C 470 450 440 470 410 480 Z" stroke-width="1.4" fill="url(#archHatch)" />
+    <!-- Tree 1 Trunk & Branches -->
+    <path d="M 420 480 Q 425 410 415 360 Q 405 320 385 295" stroke-width="2.2" />
+    <path d="M 418 380 Q 440 340 465 310" stroke-width="1.6" />
+    <path d="M 412 430 Q 370 390 355 350" stroke-width="1.4" />
+    
+    <!-- Tree 2 (Medium left background tree) -->
+    <path d="M 230 470 C 215 425 210 375 235 330 C 255 295 295 290 320 315 C 345 290 385 300 395 335 C 410 380 390 420 365 450 Z" stroke-width="1.2" opacity="0.65" />
+    <path d="M 310 480 L 315 380 Q 320 340 350 320" stroke-width="1.8" opacity="0.65" />
+    
+    <!-- Shrubbery clumps along base -->
+    <path d="M 200 520 Q 220 490 250 500 Q 280 485 310 505 Q 340 490 370 515 Q 400 500 430 520" stroke-width="1.2" />
+    <path d="M 220 530 Q 250 505 280 520 Q 320 500 360 525 Q 410 510 450 535" stroke-width="0.9" opacity="0.5" />
+  </g>
 
-  <!-- Upper Balcony Glass Railing -->
-  <polygon points="280,285 435,320 435,355 280,320" fill="none" stroke-width="0.8" opacity="0.6"/>
-  <line x1="320" y1="294" x2="320" y2="329" stroke-width="0.6"/>
-  <line x1="360" y1="303" x2="360" y2="338" stroke-width="0.6"/>
-  <line x1="400" y1="312" x2="400" y2="347" stroke-width="0.6"/>
+  <!-- MAIN RESIDENCE ARCHITECTURE (High Detail Modernist Villa) -->
+  <g stroke="#3A2416">
 
-  <!-- Ground Level Foundation & Terrace Slab -->
-  <polygon points="240,490 580,430 790,465 450,525" fill="none" stroke-width="2"/>
-  <polygon points="240,500 580,440 790,475 450,535" fill="none" stroke-width="1.2"/>
-  <line x1="240" y1="490" x2="240" y2="500"/>
-  <line x1="450" y1="525" x2="450" y2="535"/>
-  <line x1="790" y1="465" x2="790" y2="475"/>
+    <!-- 1. UPPER ROOF CANTILEVER SLAB (Heavy Structural Profile) -->
+    <!-- Top Face of Slab -->
+    <polygon points="460,180 820,95 1060,145 700,240" fill="none" stroke-width="2.5" />
+    <!-- Slab Thickness Edge -->
+    <polygon points="460,192 820,107 1060,157 700,252" fill="none" stroke-width="1.8" />
+    <line x1="460" y1="180" x2="460" y2="192" stroke-width="2.5" />
+    <line x1="820" y1="95" x2="820" y2="107" stroke-width="2.5" />
+    <line x1="1060" y1="145" x2="1060" y2="157" stroke-width="2.5" />
+    <line x1="700" y1="240" x2="700" y2="252" stroke-width="2.5" />
+    <!-- Fascia underside shading -->
+    <polygon points="460,192 700,252 700,256 460,196" fill="url(#archHatchDense)" stroke="none" />
+    <polygon points="700,252 1060,157 1060,161 700,256" fill="url(#archHatch)" stroke="none" />
 
-  <!-- Ground Level Structural Columns -->
-  <line x1="340" y1="325" x2="340" y2="475" stroke-width="2.2"/>
-  <line x1="346" y1="326" x2="346" y2="476" stroke-width="1"/>
-  <line x1="450" y1="363" x2="450" y2="525" stroke-width="2.2"/>
-  <line x1="456" y1="362" x2="456" y2="524" stroke-width="1"/>
-  <line x1="560" y1="340" x2="560" y2="490" stroke-width="2.2"/>
-  <line x1="680" y1="310" x2="680" y2="450" stroke-width="2.2"/>
+    <!-- 2. UPPER LEVEL LIVING SUITE (Floor-to-Ceiling Glazed Box) -->
+    <!-- Corner Structural Mullions -->
+    <line x1="490" y1="190" x2="490" y2="340" stroke-width="2.2" />
+    <line x1="700" y1="252" x2="700" y2="385" stroke-width="3" />
+    <line x1="1040" y1="156" x2="1040" y2="280" stroke-width="2.2" />
 
-  <!-- Ground Floor Large Sliding Glass Fenestration -->
-  <line x1="380" y1="345" x2="380" y2="500"/>
-  <line x1="415" y1="353" x2="415" y2="512"/>
-  <line x1="500" y1="345" x2="500" y2="500"/>
-  <line x1="535" y1="337" x2="535" y2="492"/>
-  <line x1="600" y1="322" x2="600" y2="475"/>
-  <line x1="640" y1="315" x2="640" y2="465"/>
+    <!-- Left Facade Window Mullions (Perspective spacing) -->
+    <line x1="530" y1="202" x2="530" y2="348" stroke-width="1.2" />
+    <line x1="570" y1="214" x2="570" y2="356" stroke-width="1.2" />
+    <line x1="610" y1="225" x2="610" y2="365" stroke-width="1.4" />
+    <line x1="650" y1="237" x2="650" y2="374" stroke-width="1.2" />
+    <!-- Horizontal Transom Bar -->
+    <line x1="490" y1="240" x2="700" y2="295" stroke-width="1.4" />
+    <line x1="490" y1="330" x2="700" y2="378" stroke-width="1" stroke-dasharray="6,3" />
 
-  <!-- Architectural Entrance Steps -->
-  <polygon points="280,515 420,535 420,542 280,522" fill="none" stroke-width="1"/>
-  <polygon points="260,525 400,545 400,552 260,532" fill="none" stroke-width="1"/>
+    <!-- Right Facade Window Mullions -->
+    <line x1="755" y1="242" x2="755" y2="368" stroke-width="1.2" />
+    <line x1="810" y1="228" x2="810" y2="352" stroke-width="1.2" />
+    <line x1="865" y1="214" x2="865" y2="335" stroke-width="1.4" />
+    <line x1="920" y1="200" x2="920" y2="318" stroke-width="1.2" />
+    <line x1="975" y1="185" x2="975" y2="300" stroke-width="1.2" />
+    <!-- Horizontal Transom Bar Right -->
+    <line x1="700" y1="295" x2="1040" y2="200" stroke-width="1.4" />
 
-  <!-- Minimalist Architectural Trees & Landscape Hatching -->
-  <!-- Tree 1 Behind Upper Left -->
-  <path d="M220,310 C220,260 210,230 230,190 C250,150 290,160 300,190 C310,160 350,170 340,210 C340,260 320,290 320,330" stroke-width="0.8" opacity="0.45"/>
-  <line x1="270" y1="210" x2="270" y2="320" stroke-width="1.2" opacity="0.6"/>
-  <!-- Tree 2 Far Right -->
-  <path d="M730,420 C710,360 700,320 730,270 C750,230 800,240 800,280 C800,340 780,390 770,440" stroke-width="0.8" opacity="0.5"/>
-  <line x1="755" y1="300" x2="755" y2="430" stroke-width="1.2" opacity="0.6"/>
+    <!-- Glass Reflection Diagonal Hatching -->
+    <g opacity="0.35" stroke-width="0.8">
+      <line x1="510" y1="240" x2="550" y2="320" />
+      <line x1="525" y1="240" x2="565" y2="320" />
+      <line x1="620" y1="260" x2="660" y2="340" />
+      <line x1="635" y1="260" x2="675" y2="340" />
+      <line x1="740" y1="270" x2="780" y2="340" />
+      <line x1="840" y1="250" x2="880" y2="320" />
+    </g>
 
-  <!-- Horizontal Landscape & Ground Contours -->
-  <path d="M120,490 Q220,480 320,510 T550,520 T790,470" stroke-width="0.8" opacity="0.35"/>
-  <path d="M140,510 Q240,500 360,530 T600,535 T800,480" stroke-width="0.6" opacity="0.25"/>
+    <!-- 3. CANTILEVERED FIRST-FLOOR TERRACE SLAB -->
+    <!-- Top of Terrace Deck -->
+    <polygon points="410,345 810,240 1080,285 700,405" fill="none" stroke-width="2.5" />
+    <!-- Thickness of Terrace Deck -->
+    <polygon points="410,358 810,253 1080,298 700,418" fill="none" stroke-width="1.8" />
+    <line x1="410" y1="345" x2="410" y2="358" stroke-width="2.5" />
+    <line x1="810" y1="240" x2="810" y2="253" stroke-width="2.5" />
+    <line x1="1080" y1="285" x2="1080" y2="298" stroke-width="2.5" />
+    <line x1="700" y1="405" x2="700" y2="418" stroke-width="2.5" />
+    <!-- Terrace underside shadow hatch -->
+    <polygon points="410,358 700,418 700,424 410,364" fill="url(#archHatchDense)" stroke="none" />
+    <polygon points="700,418 1080,298 1080,303 700,423" fill="url(#archHatch)" stroke="none" />
+
+    <!-- Glass Balustrade on Terrace -->
+    <polygon points="410,312 696,370 696,403 410,345" fill="none" stroke-width="1" opacity="0.7" />
+    <line x1="450" y1="320" x2="450" y2="353" stroke-width="0.8" opacity="0.6" />
+    <line x1="500" y1="330" x2="500" y2="363" stroke-width="0.8" opacity="0.6" />
+    <line x1="550" y1="340" x2="550" y2="373" stroke-width="0.8" opacity="0.6" />
+    <line x1="600" y1="350" x2="600" y2="383" stroke-width="0.8" opacity="0.6" />
+    <line x1="650" y1="360" x2="650" y2="393" stroke-width="0.8" opacity="0.6" />
+
+    <!-- 4. GROUND LEVEL (Grand Double-Height Glass Pavilion & Columns) -->
+    <!-- Primary Supporting Columns -->
+    <line x1="470" y1="356" x2="470" y2="525" stroke-width="3" />
+    <line x1="477" y1="356" x2="477" y2="525" stroke-width="1" />
+    
+    <line x1="600" y1="384" x2="600" y2="540" stroke-width="2.5" />
+    <line x1="606" y1="384" x2="606" y2="540" stroke-width="0.9" />
+
+    <line x1="700" y1="418" x2="700" y2="575" stroke-width="3.5" />
+    <line x1="708" y1="418" x2="708" y2="575" stroke-width="1.2" />
+
+    <line x1="840" y1="380" x2="840" y2="525" stroke-width="2.5" />
+    <line x1="960" y1="340" x2="960" y2="480" stroke-width="2.5" />
+    <line x1="1050" y1="300" x2="1050" y2="445" stroke-width="2.2" />
+
+    <!-- Ground Floor Sliding Glass Partitions -->
+    <line x1="510" y1="375" x2="510" y2="530" stroke-width="1.4" />
+    <line x1="555" y1="385" x2="555" y2="536" stroke-width="1.4" />
+    <line x1="650" y1="405" x2="650" y2="560" stroke-width="1.4" />
+    
+    <line x1="750" y1="410" x2="750" y2="550" stroke-width="1.4" />
+    <line x1="800" y1="395" x2="800" y2="536" stroke-width="1.4" />
+    <line x1="895" y1="365" x2="895" y2="505" stroke-width="1.4" />
+
+    <!-- Travertine Base Wall & Cladding Details -->
+    <polygon points="360,515 700,575 700,600 360,540" fill="none" stroke-width="2" />
+    <!-- Horizontal Ashlar Stone Joint Lines -->
+    <line x1="360" y1="523" x2="700" y2="583" stroke-width="0.8" opacity="0.6" />
+    <line x1="360" y1="531" x2="700" y2="591" stroke-width="0.8" opacity="0.6" />
+
+    <!-- Ground Podium & Infinity Edge Deck -->
+    <polygon points="320,535 700,600 1140,510 800,455" fill="none" stroke-width="2.8" />
+    <polygon points="320,550 700,615 1140,525 800,470" fill="none" stroke-width="1.8" />
+    <line x1="320" y1="535" x2="320" y2="550" stroke-width="2.8" />
+    <line x1="700" y1="600" x2="700" y2="615" stroke-width="2.8" />
+    <line x1="1140" y1="510" x2="1140" y2="525" stroke-width="2.8" />
+
+    <!-- Broad Floating Architectural Steps -->
+    <polygon points="380,560 560,592 560,602 380,570" fill="none" stroke-width="1.4" />
+    <polygon points="350,575 530,607 530,617 350,585" fill="none" stroke-width="1.4" />
+    <polygon points="320,590 500,622 500,632 320,600" fill="none" stroke-width="1.4" />
+
+    <!-- Architectural Dimension String -->
+    <g opacity="0.5" stroke-width="0.8">
+      <line x1="460" y1="160" x2="700" y2="220" />
+      <line x1="460" y1="150" x2="460" y2="170" stroke-width="1.2" />
+      <line x1="700" y1="210" x2="700" y2="230" stroke-width="1.2" />
+      
+      <line x1="700" y1="220" x2="1060" y2="125" />
+      <line x1="1060" y1="115" x2="1060" y2="135" stroke-width="1.2" />
+    </g>
+  </g>
+
+  <!-- Trees & Foliage: Right Wing & Garden Periphery -->
+  <g opacity="0.8" stroke="#4A3425">
+    <!-- Right Specimen Tree 1 (Next to East wing) -->
+    <path d="M 1030 460 C 1000 390 990 320 1025 250 C 1055 200 1120 210 1140 260 C 1170 230 1200 250 1200 300 C 1210 370 1180 430 1140 470 Z" stroke-width="1.4" fill="url(#archHatch)" />
+    <!-- Trunk & Limbs -->
+    <path d="M 1090 480 Q 1085 410 1075 350 Q 1065 300 1095 260" stroke-width="2.2" />
+    <path d="M 1080 370 Q 1120 330 1145 295" stroke-width="1.6" />
+
+    <!-- Far Right Background Tree 2 -->
+    <path d="M 1120 440 C 1105 380 1115 320 1145 280 C 1175 250 1200 265 1200 320 Z" stroke-width="1.2" opacity="0.6" />
+    
+    <!-- Fine Landscape Hatch Marks & Ground Texture -->
+    <g opacity="0.5" stroke-width="0.8">
+      <line x1="420" y1="630" x2="480" y2="630" />
+      <line x1="400" y1="640" x2="520" y2="640" />
+      <line x1="720" y1="620" x2="820" y2="620" />
+      <line x1="700" y1="635" x2="860" y2="635" />
+      <line x1="900" y1="560" x2="1020" y2="560" />
+      <line x1="920" y1="575" x2="1050" y2="575" />
+    </g>
+  </g>
 </svg>

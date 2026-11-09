@@ -934,6 +934,25 @@ function initTransactionsCarousel() {
     const walk = (x - startX) * 1.4;
     track.scrollLeft = scrollLeft - walk;
   });
+
+  // Horizontal scroll on mouse wheel when hovered over Track Record
+  const transContainer = document.querySelector('.transactions-container') || track;
+  transContainer.addEventListener('wheel', (e) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (!delta) return;
+
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (maxScroll <= 0) return;
+
+    const atStart = track.scrollLeft <= 4;
+    const atEnd = track.scrollLeft >= maxScroll - 4;
+
+    if ((delta > 0 && !atEnd) || (delta < 0 && !atStart)) {
+      e.preventDefault();
+      e.stopPropagation();
+      track.scrollLeft += delta * 1.15;
+    }
+  }, { passive: false });
 }
 
 /* ==========================================================================
@@ -1009,4 +1028,23 @@ function initPortfolioCarousel() {
     const walk = (x - startX) * 1.4;
     track.scrollLeft = scrollLeft - walk;
   });
+
+  // Horizontal scroll on mouse wheel when hovered over Portfolio
+  const portContainer = document.querySelector('.royal-properties-container') || track;
+  portContainer.addEventListener('wheel', (e) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (!delta) return;
+
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (maxScroll <= 0) return;
+
+    const atStart = track.scrollLeft <= 4;
+    const atEnd = track.scrollLeft >= maxScroll - 4;
+
+    if ((delta > 0 && !atEnd) || (delta < 0 && !atStart)) {
+      e.preventDefault();
+      e.stopPropagation();
+      track.scrollLeft += delta * 1.15;
+    }
+  }, { passive: false });
 }

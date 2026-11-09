@@ -1080,8 +1080,8 @@ main.deck-container {
   display: flex;
   gap: 22px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   padding: 10px 4px 18px 4px;
   scrollbar-width: none;
@@ -2287,8 +2287,8 @@ main.deck-container {
   display: flex;
   gap: 22px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   padding: 6px 2px 14px 2px;
   scrollbar-width: thin;

@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" fill="none" stroke="#2B2118" stroke-linecap="square" stroke-linejoin="miter">
+  <defs>
+    <!-- Technical Fine Drafting Grid -->
+    <pattern id="portGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="currentColor" stroke-width="0.3" opacity="0.12" />
+      <line x1="0" y1="0" x2="0" y2="30" stroke="currentColor" stroke-width="0.3" opacity="0.12" />
+      <circle cx="0" cy="0" r="0.6" fill="currentColor" opacity="0.2" />
+    </pattern>
+    <pattern id="portMajorGrid" width="150" height="150" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="150" y2="0" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.2" />
+      <line x1="0" y1="0" x2="0" y2="150" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.2" />
+    </pattern>
+  </defs>
+
+  <!-- Background Technical Drafting Grid -->
+  <rect width="100%" height="100%" fill="url(#portGrid)" />
+  <rect width="100%" height="100%" fill="url(#portMajorGrid)" />
+
+  <!-- Sheet Border & CAD Reference Registration Marks -->
+  <g stroke="currentColor" opacity="0.4" stroke-width="0.8">
+    <rect x="25" y="25" width="1870" height="1030" stroke-width="1.2" />
+    <rect x="30" y="30" width="1860" height="1020" stroke-width="0.6" />
+    <!-- Center registration crosshairs -->
+    <line x1="960" y1="15" x2="960" y2="38" stroke-width="1.2" />
+    <line x1="960" y1="1042" x2="960" y2="1065" stroke-width="1.2" />
+    <line x1="15" y1="540" x2="38" y2="540" stroke-width="1.2" />
+    <line x1="1882" y1="540" x2="1905" y2="540" stroke-width="1.2" />
+  </g>
+
+  <!-- Architectural Engineering Elevation: Sovereign Contemporary Estate -->
+  <g stroke="currentColor" opacity="0.85">
+
+    <!-- =========================================================================
+         1. Structural Column Grid Axis Lines (Vertical: A to H)
+         ========================================================================= -->
+    <g stroke-width="0.7" stroke-dasharray="8,4,2,4" opacity="0.35">
+      <!-- Axis Lines -->
+      <line x1="220" y1="90" x2="220" y2="920" />
+      <line x1="420" y1="90" x2="420" y2="920" />
+      <line x1="640" y1="90" x2="640" y2="920" />
+      <line x1="860" y1="90" x2="860" y2="920" />
+      <line x1="1080" y1="90" x2="1080" y2="920" />
+      <line x1="1300" y1="90" x2="1300" y2="920" />
+      <line x1="1520" y1="90" x2="1520" y2="920" />
+      <line x1="1720" y1="90" x2="1720" y2="920" />
+    </g>
+
+    <!-- Column Grid Bubbles & Labels (Top & Bottom) -->
+    <g fill="none" stroke-width="1">
+      <!-- Bubble circles top -->
+      <circle cx="220" cy="75" r="14" />
+      <circle cx="420" cy="75" r="14" />
+      <circle cx="640" cy="75" r="14" />
+      <circle cx="860" cy="75" r="14" />
+      <circle cx="1080" cy="75" r="14" />
+      <circle cx="1300" cy="75" r="14" />
+      <circle cx="1520" cy="75" r="14" />
+      <circle cx="1720" cy="75" r="14" />
+      <!-- Letters -->
+      <text x="220" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">A</text>
+      <text x="420" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">B</text>
+      <text x="640" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">C</text>
+      <text x="860" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">D</text>
+      <text x="1080" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">E</text>
+      <text x="1300" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">F</text>
+      <text x="1520" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">G</text>
+      <text x="1720" y="80" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">H</text>
+    </g>
+
+    <!-- =========================================================================
+         2. Horizontal Elevation Level Datum Markers & Lines
+         ========================================================================= -->
+    <!-- Level 04: Top of Parapet +15.600 -->
+    <g stroke-width="0.8">
+      <line x1="120" y1="210" x2="1820" y2="210" stroke-dasharray="12,6" opacity="0.3" />
+      <!-- Left Datum Target Arrow -->
+      <polygon points="120,210 95,202 95,218" fill="currentColor" stroke="none" />
+      <line x1="95" y1="210" x2="65" y2="210" stroke-width="1.2" />
+      <text x="90" y="196" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▲ ROOF PARAPET</text>
+      <text x="90" y="206" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">+15.600</text>
+    </g>
+
+    <!-- Level 03: Upper Bedroom Wing Roof +12.400 -->
+    <g stroke-width="0.8">
+      <line x1="120" y1="310" x2="1820" y2="310" stroke-dasharray="12,6" opacity="0.3" />
+      <polygon points="120,310 95,302 95,318" fill="currentColor" stroke="none" />
+      <line x1="95" y1="310" x2="65" y2="310" stroke-width="1.2" />
+      <text x="90" y="296" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▲ MASTER SUITE BALCONY</text>
+      <text x="90" y="306" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">+12.400</text>
+    </g>
+
+    <!-- Level 02: First Floor FFL +7.800 -->
+    <g stroke-width="0.8">
+      <line x1="120" y1="470" x2="1820" y2="470" stroke-dasharray="12,6" opacity="0.3" />
+      <polygon points="120,470 95,462 95,478" fill="currentColor" stroke="none" />
+      <line x1="95" y1="470" x2="65" y2="470" stroke-width="1.2" />
+      <text x="90" y="456" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▲ LEVEL 02 FINISH FLOOR</text>
+      <text x="90" y="466" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">+7.800</text>
+    </g>
+
+    <!-- Level 01: Ground Living Salon FFL +3.600 -->
+    <g stroke-width="0.8">
+      <line x1="120" y1="630" x2="1820" y2="630" stroke-dasharray="12,6" opacity="0.3" />
+      <polygon points="120,630 95,622 95,638" fill="currentColor" stroke="none" />
+      <line x1="95" y1="630" x2="65" y2="630" stroke-width="1.2" />
+      <text x="90" y="616" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▲ LEVEL 01 MAIN SALON</text>
+      <text x="90" y="626" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">+3.600</text>
+    </g>
+
+    <!-- Level 00: Natural Ground Line / Podium Datum 0.000 -->
+    <g stroke-width="1.5">
+      <line x1="120" y1="780" x2="1820" y2="780" stroke-width="2.5" />
+      <polygon points="120,780 95,772 95,788" fill="currentColor" stroke="none" />
+      <line x1="95" y1="780" x2="65" y2="780" stroke-width="1.6" />
+      <text x="90" y="766" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▼ NATURAL GROUND LEVEL</text>
+      <text x="90" y="776" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">±0.000 (PODIUM DATUM)</text>
+    </g>
+
+    <!-- Level -01: Infinity Pool Terrace -2.400 -->
+    <g stroke-width="0.8">
+      <line x1="120" y1="880" x2="1820" y2="880" stroke-dasharray="8,4" opacity="0.35" />
+      <polygon points="120,880 95,872 95,888" fill="currentColor" stroke="none" />
+      <line x1="95" y1="880" x2="65" y2="880" stroke-width="1.2" />
+      <text x="90" y="866" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="currentColor" stroke="none">▼ LOWER POOL DECK</text>
+      <text x="90" y="876" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">-2.400</text>
+    </g>
+
+
+    <!-- =========================================================================
+         3. Architectural Modernist Façade Elevation (Massing & Elements)
+         ========================================================================= -->
+
+    <!-- BASEMENT & FOUNDATION PLINTH (Hatched Stone Foundation) -->
+    <g stroke-width="1.8">
+      <rect x="220" y="780" width="1500" height="100" />
+      <!-- Vertical rustication joints in basement plinth -->
+      <line x1="370" y1="780" x2="370" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="520" y1="780" x2="520" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="670" y1="780" x2="670" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="820" y1="780" x2="820" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="970" y1="780" x2="970" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="1120" y1="780" x2="1120" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="1270" y1="780" x2="1270" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="1420" y1="780" x2="1420" y2="880" stroke-width="0.8" opacity="0.4" />
+      <line x1="1570" y1="780" x2="1570" y2="880" stroke-width="0.8" opacity="0.4" />
+    </g>
+
+    <!-- GROUND FLOOR SALON (Extensive Glazing & Slender Columns) -->
+    <g stroke-width="1.8">
+      <!-- Ground Floor Slab & Soffit -->
+      <rect x="200" y="618" width="1540" height="16" stroke-width="2.2" />
+      <rect x="220" y="634" width="1500" height="146" stroke-width="1.6" />
+
+      <!-- Floor-to-Ceiling Structural Glass Curtain Mullions -->
+      <g stroke-width="1" opacity="0.75">
+        <line x1="280" y1="634" x2="280" y2="780" />
+        <line x1="340" y1="634" x2="340" y2="780" stroke-width="2" />
+        <line x1="400" y1="634" x2="400" y2="780" />
+        <line x1="460" y1="634" x2="460" y2="780" />
+        <line x1="520" y1="634" x2="520" y2="780" stroke-width="2" />
+        <line x1="580" y1="634" x2="580" y2="780" />
+        <line x1="640" y1="634" x2="640" y2="780" stroke-width="2" />
+        <line x1="700" y1="634" x2="700" y2="780" />
+        <line x1="760" y1="634" x2="760" y2="780" />
+        <line x1="820" y1="634" x2="820" y2="780" stroke-width="2" />
+        <line x1="880" y1="634" x2="880" y2="780" />
+        <line x1="940" y1="634" x2="940" y2="780" />
+        <line x1="1000" y1="634" x2="1000" y2="780" stroke-width="2" />
+        <line x1="1060" y1="634" x2="1060" y2="780" />
+        <line x1="1120" y1="634" x2="1120" y2="780" />
+        <line x1="1180" y1="634" x2="1180" y2="780" stroke-width="2" />
+        <line x1="1240" y1="634" x2="1240" y2="780" />
+        <line x1="1300" y1="634" x2="1300" y2="780" stroke-width="2" />
+        <line x1="1360" y1="634" x2="1360" y2="780" />
+        <line x1="1420" y1="634" x2="1420" y2="780" />
+        <line x1="1480" y1="634" x2="1480" y2="780" stroke-width="2" />
+        <line x1="1540" y1="634" x2="1540" y2="780" />
+        <line x1="1600" y1="634" x2="1600" y2="780" stroke-width="2" />
+        <line x1="1660" y1="634" x2="1660" y2="780" />
+      </g>
+      <!-- Transom Lines on Ground Glass -->
+      <line x1="220" y1="730" x2="1720" y2="730" stroke-width="0.8" opacity="0.5" />
+    </g>
+
+    <!-- UPPER LEVEL (Cantilevered Volumes & Floating Concrete Canopies) -->
+    <g stroke-width="2">
+      <!-- Mid-Level Structural Transfer Slab -->
+      <rect x="180" y="458" width="1580" height="18" stroke-width="2.5" />
+
+      <!-- Left Volume: Master Suite Cantilever (Columns A-D: x=200 to 860) -->
+      <rect x="200" y="298" width="660" height="160" stroke-width="2.2" />
+      <!-- Cantilever Balcony Railing -->
+      <line x1="180" y1="420" x2="860" y2="420" stroke-width="1.2" />
+      <g stroke-width="0.8" opacity="0.6">
+        <line x1="240" y1="420" x2="240" y2="458" />
+        <line x1="300" y1="420" x2="300" y2="458" />
+        <line x1="360" y1="420" x2="360" y2="458" />
+        <line x1="420" y1="420" x2="420" y2="458" />
+        <line x1="480" y1="420" x2="480" y2="458" />
+        <line x1="540" y1="420" x2="540" y2="458" />
+        <line x1="600" y1="420" x2="600" y2="458" />
+        <line x1="660" y1="420" x2="660" y2="458" />
+        <line x1="720" y1="420" x2="720" y2="458" />
+        <line x1="780" y1="420" x2="780" y2="458" />
+        <line x1="840" y1="420" x2="840" y2="458" />
+      </g>
+
+      <!-- Center Volume: Double-Height Glass Gallery (Columns D-F: x=860 to 1300) -->
+      <rect x="860" y="200" width="440" height="258" stroke-width="2.4" />
+      <!-- Vertical Glass Mullions on Center Atrium -->
+      <g stroke-width="1.2" opacity="0.8">
+        <line x1="915" y1="200" x2="915" y2="458" />
+        <line x1="970" y1="200" x2="970" y2="458" />
+        <line x1="1025" y1="200" x2="1025" y2="458" stroke-width="2" />
+        <line x1="1080" y1="200" x2="1080" y2="458" stroke-width="2.2" />
+        <line x1="1135" y1="200" x2="1135" y2="458" stroke-width="2" />
+        <line x1="1190" y1="200" x2="1190" y2="458" />
+        <line x1="1245" y1="200" x2="1245" y2="458" />
+      </g>
+      <!-- Atrium Horizontal Transom Ribs -->
+      <line x1="860" y1="260" x2="1300" y2="260" stroke-width="1.2" opacity="0.6" />
+      <line x1="860" y1="320" x2="1300" y2="320" stroke-width="1.2" opacity="0.6" />
+      <line x1="860" y1="380" x2="1300" y2="380" stroke-width="1.2" opacity="0.6" />
+
+      <!-- Right Volume: Penthouse Wing (Columns F-H: x=1300 to 1740) -->
+      <rect x="1300" y="298" width="440" height="160" stroke-width="2.2" />
+      <!-- Horizontal Architectural Brise-Soleil Louvers -->
+      <g stroke-width="1" opacity="0.65">
+        <line x1="1320" y1="325" x2="1720" y2="325" />
+        <line x1="1320" y1="345" x2="1720" y2="345" />
+        <line x1="1320" y1="365" x2="1720" y2="365" />
+        <line x1="1320" y1="385" x2="1720" y2="385" />
+        <line x1="1320" y1="405" x2="1720" y2="405" />
+        <line x1="1320" y1="425" x2="1720" y2="425" />
+      </g>
+    </g>
+
+    <!-- ROOF CANOPIES & OVERHANGS (High-Tech Modernist Profile) -->
+    <g stroke-width="2.2">
+      <!-- Main Upper Roof Slab with 1200mm Cantilever -->
+      <polygon points="820,196 1340,196 1340,208 820,208" stroke-width="2.8" />
+      <!-- Left Wing Roof Slab -->
+      <polygon points="170,292 880,292 880,302 170,302" stroke-width="2.4" />
+      <!-- Right Wing Roof Slab -->
+      <polygon points="1280,292 1760,292 1760,302 1280,302" stroke-width="2.4" />
+      <!-- Slender Roof Canopy Bracing Struts -->
+      <line x1="170" y1="292" x2="220" y2="360" stroke-width="1.2" opacity="0.5" />
+      <line x1="1760" y1="292" x2="1710" y2="360" stroke-width="1.2" opacity="0.5" />
+    </g>
+
+    <!-- =========================================================================
+         4. Dimension Strings (Overall & Grid Spans)
+         ========================================================================= -->
+    <!-- Top Overall Dimension Line (15,000mm) -->
+    <g stroke-width="0.8">
+      <line x1="220" y1="135" x2="1720" y2="135" />
+      <line x1="220" y1="125" x2="220" y2="145" stroke-width="1.4" />
+      <line x1="1720" y1="125" x2="1720" y2="145" stroke-width="1.4" />
+      <line x1="220" y1="135" x2="230" y2="131" stroke-width="1.2" />
+      <line x1="220" y1="135" x2="230" y2="139" stroke-width="1.2" />
+      <line x1="1720" y1="135" x2="1710" y2="131" stroke-width="1.2" />
+      <line x1="1720" y1="135" x2="1710" y2="139" stroke-width="1.2" />
+      <text x="970" y="128" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">TOTAL FAÇADE SPAN: 37,500 mm</text>
+    </g>
+
+    <!-- Bottom Detail Bays Dimension Strings -->
+    <g stroke-width="0.7">
+      <line x1="220" y1="915" x2="1720" y2="915" />
+      <!-- Ticks at each column -->
+      <line x1="220" y1="905" x2="220" y2="925" stroke-width="1.2" />
+      <line x1="420" y1="905" x2="420" y2="925" stroke-width="1.2" />
+      <line x1="640" y1="905" x2="640" y2="925" stroke-width="1.2" />
+      <line x1="860" y1="905" x2="860" y2="925" stroke-width="1.2" />
+      <line x1="1080" y1="905" x2="1080" y2="925" stroke-width="1.2" />
+      <line x1="1300" y1="905" x2="1300" y2="925" stroke-width="1.2" />
+      <line x1="1520" y1="905" x2="1520" y2="925" stroke-width="1.2" />
+      <line x1="1720" y1="905" x2="1720" y2="925" stroke-width="1.2" />
+
+      <text x="320" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,000</text>
+      <text x="530" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,500</text>
+      <text x="750" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,500</text>
+      <text x="970" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,500</text>
+      <text x="1190" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,500</text>
+      <text x="1410" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,500</text>
+      <text x="1620" y="930" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">5,000</text>
+    </g>
+
+    <!-- =========================================================================
+         5. Professional Engineering Title Block (Bottom-Right CAD Stamp)
+         ========================================================================= -->
+    <g stroke="currentColor" opacity="0.8" transform="translate(1320, 950)">
+      <rect x="0" y="0" width="530" height="85" stroke-width="1.2" fill="none" />
+      <line x1="0" y1="28" x2="530" y2="28" stroke-width="0.8" />
+      <line x1="0" y1="56" x2="530" y2="56" stroke-width="0.8" />
+      <line x1="280" y1="28" x2="280" y2="85" stroke-width="0.8" />
+
+      <text x="14" y="20" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="currentColor" stroke="none">BEN BANDARI — SOVEREIGN REAL ESTATE ARCHITECTURE</text>
+      <text x="14" y="44" font-family="'Courier New', monospace" font-size="10" fill="currentColor" stroke="none">PROJECT: MONUMENTAL RESIDENCE FAÇADE</text>
+      <text x="14" y="72" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none">SHEET: NORTH ELEVATION &amp; AXIS GRID</text>
+      <text x="294" y="44" font-family="'Courier New', monospace" font-size="9" fill="currentColor" stroke="none">SCALE: 1:100 @ A1</text>
+      <text x="294" y="72" font-family="'Courier New', monospace" font-size="9" font-weight="bold" fill="currentColor" stroke="none">DWG NO: BB-PR-EL-01-REV.C</text>
+    </g>
+
+  </g>
+</svg>

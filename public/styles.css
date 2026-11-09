@@ -821,6 +821,10 @@ main.deck-container {
   background-image: url('blueprint-isometric.svg');
 }
 
+.section-blueprint-bg.blueprint-portfolio {
+  background-image: url('blueprint-portfolio.svg');
+}
+
 /* Section-Specific Technical Tones & Very Minimal Opacity */
 #about .section-blueprint-bg {
   opacity: 0.08;

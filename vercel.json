@@ -1,4 +1,6 @@
 {
   "outputDirectory": "public",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "framework": null,
+  "buildCommand": null
 }

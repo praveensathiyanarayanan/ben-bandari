@@ -2,9 +2,8 @@
   "name": "ben-bandari-portfolio",
   "version": "1.0.0",
   "description": "Ben Bandari — Contemporary Architectural Real Estate Portfolio",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node scripts/local-server.js"
   },
   "keywords": [
     "real-estate",
